@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Bèrnia – Authentieke Stenen Villa · Sierra de Bèrnia, Spanje</title>
+  <meta name="description" content="Huur een authentieke stenen villa aan de voet van de Sierra de Bèrnia. 4 slaapkamers voor max. 8 personen, adembenemend uitzicht op zee én bergen, privé-ingang en parkeerplaats. Vanaf €500 per week." />
+
+  <!-- ═══════════════════════════════════════════════
+       HOE BEZETTE DATUMS BIJWERKEN
+       Scroll naar het <script> blok onderaan dit
+       bestand en bewerk de BOOKED_RANGES array.
+       Formaat: ["JJJJ-MM-DD", "JJJJ-MM-DD"]
+       (startdatum, einddatum, beide inclusief).
+  ═══════════════════════════════════════════════ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: #2a2a2a;
+      background: #faf8f5;
+      line-height: 1.7;
+    }
+
+    /* ─── COLOUR TOKENS ────────────────────────────── */
+    :root {
+      --gold:    #9a7b3f;
+      --gold-lt: #c9a96e;
+      --green:   #3a5f3e;
+      --stone:   #e8e0d5;
+      --off-wh:  #faf8f5;
+      --dark:    #1e1e1e;
+    }
+
+    /* ─── TYPOGRAPHY ───────────────────────────────── */
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 1.1; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; }
+    h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+    p  { max-width: 65ch; }
+
+    /* ─── NAVIGATION ───────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 4%;
+      background: rgba(30,30,30,0.0);
+      transition: background 0.4s, padding 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(30,20,10,0.94);
+      padding: 0.7rem 4%;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-lt); }
+    .nav-cta {
+      background: var(--gold);
+      color: #fff !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 2px;
+      font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #7a6030 !important; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-burger span { width: 24px; height: 2px; background: #fff; display: block; }
+
+    /* ─── HERO ──────────────────────────────────────── */
+    #hero {
+      position: relative; height: 100vh; min-height: 560px;
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.2s ease-in-out;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.68) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; color: #fff;
+      padding: 0 1.5rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold-lt); margin-bottom: 1rem;
+    }
+    .hero-content h1 { text-shadow: 0 2px 20px rgba(0,0,0,0.4); margin-bottom: 1rem; }
+    .hero-content p {
+      font-size: 1.15rem; color: rgba(255,255,255,0.92);
+      max-width: 52ch; margin: 0 auto 2rem;
+      font-style: italic; font-family: 'Cormorant Garamond', serif;
+    }
+    .btn-hero {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff; text-decoration: none;
+      padding: 0.9rem 2.6rem; border-radius: 2px;
+      font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+      font-weight: 500; transition: background 0.2s, transform 0.2s;
+    }
+    .btn-hero:hover { background: #7a6030; transform: translateY(-2px); }
+    .hero-dots {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 0.5rem; z-index: 3;
+    }
+    .hero-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.4); cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero-dot.active { background: var(--gold-lt); }
+    .hero-scroll {
+      position: absolute; bottom: 2rem; right: 4%;
+      color: rgba(255,255,255,0.6); font-size: 0.7rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      writing-mode: vertical-rl; z-index: 3;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .hero-scroll::after {
+      content: ''; width: 1px; height: 40px;
+      background: rgba(255,255,255,0.4); display: block;
+    }
+
+    /* ─── FACTS BAR ─────────────────────────────────── */
+    .facts-bar {
+      background: var(--dark);
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 0; border-bottom: 1px solid #333;
+    }
+    .fact {
+      padding: 1.4rem 2rem;
+      text-align: center; color: #fff;
+      border-right: 1px solid #333;
+      flex: 1; min-width: 120px;
+    }
+    .fact:last-child { border-right: none; }
+    .fact-icon { font-size: 1.4rem; margin-bottom: 0.3rem; }
+    .fact-label { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-lt); }
+    .fact-value { font-size: 1rem; font-family: 'Cormorant Garamond', serif; margin-top: 0.15rem; }
+
+    /* ─── SECTIONS SHARED ───────────────────────────── */
+    section { padding: 5rem 4%; }
+    .section-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem; display: block;
+    }
+    .divider {
+      width: 50px; height: 2px; background: var(--gold);
+      margin: 1.2rem 0 2rem;
+    }
+    .divider.center { margin: 1.2rem auto 2rem; }
+    .text-center { text-align: center; }
+    .text-center p { margin: 0 auto; }
+
+    /* ─── ABOUT ─────────────────────────────────────── */
+    #about { background: var(--off-wh); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .about-img-wrap { position: relative; }
+    .about-img-main {
+      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      border-radius: 2px;
+    }
+    .about-img-accent {
+      position: absolute; bottom: -2rem; right: -2rem;
+      width: 55%; aspect-ratio: 1; object-fit: cover;
+      border: 6px solid var(--off-wh); border-radius: 2px;
+    }
+    .about-text p { color: #555; margin-bottom: 1.2rem; }
+    .about-badge {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: var(--stone); border-left: 3px solid var(--gold);
+      padding: 0.9rem 1.2rem; margin-top: 1rem; border-radius: 0 2px 2px 0;
+      font-size: 0.85rem; color: #444;
+    }
+    .about-badge strong { color: var(--gold); }
+
+    /* ─── HIGHLIGHTS STRIP ──────────────────────────── */
+    .highlights {
+      background: var(--stone);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      max-width: 1200px; margin: 3rem auto 0; border-radius: 2px; overflow: hidden;
+    }
+    .highlight {
+      padding: 2rem 1.8rem;
+      border-right: 1px solid rgba(0,0,0,0.08);
+    }
+    .highlight:last-child { border-right: none; }
+    .highlight h3 { font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--dark); }
+    .highlight p { font-size: 0.88rem; color: #666; max-width: none; }
+    .hl-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+
+    /* ─── GALLERY ───────────────────────────────────── */
+    #gallery { background: var(--stone); padding: 5rem 4%; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+      max-width: 1300px; margin: 0 auto;
+    }
+    .gallery-item {
+      overflow: hidden; cursor: pointer; position: relative;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-item:nth-child(5) { grid-column: span 2; }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      aspect-ratio: 1;
+      display: block; transition: transform 0.5s ease;
+    }
+    .gallery-item:nth-child(1) img,
+    .gallery-item:nth-child(5) img { aspect-ratio: 2; }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      color: #fff; font-size: 2rem; cursor: pointer; line-height: 1;
+    }
+    .lightbox-prev, .lightbox-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.15); border: none;
+      color: #fff; font-size: 2rem; cursor: pointer;
+      width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox-prev { left: 1rem; }
+    .lightbox-next { right: 1rem; }
+
+    /* ─── AMENITIES ──────────────────────────────────── */
+    #amenities { background: var(--off-wh); }
+    .amenities-inner { max-width: 1100px; margin: 0 auto; }
+    .amenities-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.2rem; margin-top: 1rem;
+    }
+    .amenity {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      padding: 1.2rem; background: #fff;
+      border: 1px solid #e8e4dd; border-radius: 2px;
+    }
+    .amenity-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .amenity-name { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; }
+    .amenity-desc { font-size: 0.75rem; color: #888; }
+
+    /* ─── HIKING ────────────────────────────────────── */
+    #hiking {
+      background: var(--green);
+      color: #fff;
+      position: relative; overflow: hidden;
+    }
+    #hiking::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('P4140545~2.JPG') center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .hiking-inner {
+      position: relative; max-width: 900px; margin: 0 auto;
+      text-align: center;
+    }
+    #hiking .section-eyebrow { color: var(--gold-lt); }
+    #hiking h2 { color: #fff; }
+    #hiking .divider { background: var(--gold-lt); }
+    .hiking-lp {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.6rem 1.2rem; border-radius: 2px;
+      font-size: 0.78rem; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.9); margin-bottom: 2rem;
+    }
+    .hiking-stats {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .hiking-stat { text-align: center; }
+    .hiking-stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; color: var(--gold-lt); display: block;
+    }
+    .hiking-stat-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.75; }
+    .hiking-desc { color: rgba(255,255,255,0.82); margin: 0 auto; }
+    .btn-outline-white {
+      display: inline-block; margin-top: 2rem;
+      border: 1px solid rgba(255,255,255,0.5);
+      color: #fff; text-decoration: none;
+      padding: 0.8rem 2rem; border-radius: 2px;
+      font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+    /* ─── LOCATION ──────────────────────────────────── */
+    #location { background: var(--stone); }
+    .location-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto;
+    }
+    .location-text p { color: #555; margin-bottom: 1rem; }
+    .nearby-list { list-style: none; margin-top: 1rem; }
+    .nearby-list li {
+      display: flex; justify-content: space-between;
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+      font-size: 0.88rem;
+    }
+    .nearby-list .dist { color: var(--gold); font-weight: 500; }
+    .map-embed { width: 100%; height: 380px; border: 0; border-radius: 2px; }
+
+    /* ─── AVAILABILITY ───────────────────────────────── */
+    #availability { background: var(--off-wh); }
+    .availability-inner { max-width: 1050px; margin: 0 auto; }
+    .cal-legend {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin-bottom: 2rem; font-size: 0.8rem;
+    }
+    .cal-legend-item { display: flex; align-items: center; gap: 0.5rem; }
+    .cal-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .cal-dot.available { background: #3a8a45; }
+    .cal-dot.booked    { background: #c04040; }
+    .cal-dot.past      { background: #ccc; }
+    .calendars-wrap {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .cal-month { background: #fff; border: 1px solid #e8e4dd; border-radius: 4px; overflow: hidden; }
+    .cal-header {
+      background: var(--dark); color: #fff;
+      text-align: center; padding: 0.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; letter-spacing: 0.05em;
+    }
+    .cal-days-header {
+      display: grid; grid-template-columns: repeat(7,1fr);
+      background: var(--stone); font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .cal-days-header span { text-align: center; padding: 0.5rem 0; color: #666; }
+    .cal-days { display: grid; grid-template-columns: repeat(7,1fr); }
+    .cal-day {
+      text-align: center; padding: 0.5rem 0.2rem;
+      font-size: 0.82rem; border: 1px solid transparent;
+    }
+    .cal-day.past    { color: #bbb; }
+    .cal-day.booked  {
+      background: #fde8e8; color: #c04040;
+      font-weight: 500; border-radius: 2px;
+    }
+    .cal-day.available { color: #2a2a2a; }
+    .cal-day.today {
+      font-weight: 700; border: 1px solid var(--gold);
+      border-radius: 2px;
+    }
+    .cal-note {
+      margin-top: 1.5rem; font-size: 0.82rem; color: #777;
+      border-left: 3px solid var(--gold); padding-left: 1rem;
+    }
+
+    /* ─── PRICING ───────────────────────────────────── */
+    #pricing { background: var(--dark); color: #fff; text-align: center; }
+    #pricing .section-eyebrow { color: var(--gold-lt); }
+    #pricing h2 { color: #fff; }
+    #pricing .divider { background: var(--gold-lt); }
+    .price-cards {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem;
+      max-width: 900px; margin: 0 auto;
+    }
+    .price-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px; padding: 2rem 2.5rem;
+      min-width: 220px; flex: 1;
+    }
+    .price-card.featured { border-color: var(--gold); background: rgba(154,123,63,0.15); }
+    .price-season { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 0.5rem; }
+    .price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; color: #fff; line-height: 1;
+    }
+    .price-amount sup { font-size: 1.5rem; vertical-align: top; margin-top: 0.5rem; }
+    .price-amount sub { font-size: 1rem; color: rgba(255,255,255,0.5); }
+    .price-info { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
+    .price-includes {
+      list-style: none; margin-top: 1.2rem; text-align: left;
+      font-size: 0.82rem; color: rgba(255,255,255,0.75);
+    }
+    .price-includes li { padding: 0.25rem 0; }
+    .price-includes li::before { content: '✓  '; color: var(--gold-lt); }
+    .price-note {
+      margin-top: 2.5rem; font-size: 0.8rem;
+      color: rgba(255,255,255,0.5); max-width: 55ch; margin-left: auto; margin-right: auto;
+    }
+
+    /* ─── CONTACT ───────────────────────────────────── */
+    #contact { background: var(--off-wh); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start; max-width: 1100px; margin: 0 auto;
+    }
+    .contact-info p { color: #555; margin-bottom: 1.5rem; }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 0.8rem;
+      margin-bottom: 1.1rem; font-size: 0.9rem;
+    }
+    .contact-detail-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .contact-detail a { color: var(--gold); text-decoration: none; }
+    .contact-detail a:hover { text-decoration: underline; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #666; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1px solid #ddd; border-radius: 2px;
+      padding: 0.75rem 1rem; font-family: 'Jost', sans-serif;
+      font-size: 0.9rem; background: #fff; color: #333;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-submit {
+      background: var(--gold); color: #fff; border: none;
+      padding: 0.9rem 2rem; border-radius: 2px; cursor: pointer;
+      font-family: 'Jost', sans-serif; font-size: 0.8rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      font-weight: 500; transition: background 0.2s; align-self: flex-start;
+    }
+    .btn-submit:hover { background: #7a6030; }
+    .form-success {
+      display: none; background: #e8f5e9; border: 1px solid #a5d6a7;
+      border-radius: 2px; padding: 1rem; color: #2e7d32; font-size: 0.88rem;
+    }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: #25D366; color: #fff; text-decoration: none;
+      padding: 0.8rem 1.6rem; border-radius: 2px;
+      font-size: 0.82rem; font-weight: 500; margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .btn-whatsapp:hover { background: #1da851; }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.55);
+      text-align: center; padding: 2.5rem 4%;
+      font-size: 0.78rem;
+    }
+    footer .foot-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-style: italic;
+      color: #fff; display: block; margin-bottom: 0.5rem;
+    }
+    footer .foot-links { display: flex; justify-content: center; gap: 1.5rem; margin: 1rem 0; flex-wrap: wrap; }
+    footer .foot-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; }
+    footer .foot-links a:hover { color: var(--gold-lt); }
+
+    /* ─── MOBILE NAV ─────────────────────────────────── */
+    .nav-mobile { display: none; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .nav-mobile {
+        position: fixed; inset: 0; background: var(--dark); z-index: 99;
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 2rem;
+      }
+      .nav-mobile.open { display: flex; }
+      .nav-mobile a { color: #fff; text-decoration: none; font-size: 1.6rem; font-family: 'Cormorant Garamond', serif; }
+      .nav-mobile-close {
+        position: absolute; top: 1.5rem; right: 1.5rem;
+        color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none;
+      }
+      .about-grid, .contact-grid, .location-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-img-accent { display: none; }
+      .highlights { grid-template-columns: 1fr; }
+      .highlight { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.08); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+      .gallery-item:nth-child(1) img,
+      .gallery-item:nth-child(5) img { aspect-ratio: 1; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 5%; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+      .gallery-item:nth-child(1) img,
+      .gallery-item:nth-child(5) img { aspect-ratio: 1; }
+      .facts-bar { flex-direction: column; }
+      .fact { border-right: none; border-bottom: 1px solid #333; }
+    }
+
+    /* ─── SCROLL ANIMATION ───────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATIE ═════════════════════════════════════ -->
+  <nav id="mainNav">
+    <a href="#hero" class="nav-logo">Casa Bèrnia</a>
+    <ul class="nav-links">
+      <li><a href="#about">De Villa</a></li>
+      <li><a href="#uitzicht">Uitzicht</a></li>
+      <li><a href="#gallery">Foto's</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#hiking">Wandelen</a></li>
+      <li><a href="#availability">Beschikbaarheid</a></li>
+      <li><a href="#pricing">Tarieven</a></li>
+      <li><a href="#contact" class="nav-cta">Boek nu</a></li>
+    </ul>
+    <div class="nav-burger" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobiel menu overlay -->
+  <div class="nav-mobile" id="mobileNav">
+    <button class="nav-mobile-close" id="mobileNavClose">✕</button>
+    <a href="#about"        onclick="closeMobileNav()">De Villa</a>
+    <a href="#uitzicht"     onclick="closeMobileNav()">Uitzicht</a>
+    <a href="#gallery"      onclick="closeMobileNav()">Foto's</a>
+    <a href="#services"     onclick="closeMobileNav()">Services</a>
+    <a href="#hiking"       onclick="closeMobileNav()">Wandelen</a>
+    <a href="#availability" onclick="closeMobileNav()">Beschikbaarheid</a>
+    <a href="#pricing"      onclick="closeMobileNav()">Tarieven</a>
+    <a href="#contact"      onclick="closeMobileNav()">Boek nu</a>
+  </div>
+
+  <!-- ══ HERO ══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active" style="background-image:url('IMG_2374.jpg')"></div>
+      <div class="hero-slide"        style="background-image:url('IMG_4607.jpg')"></div>
+      <div class="hero-slide"        style="background-image:url('P4140537~2.JPG')"></div>
+      <div class="hero-slide"        style="background-image:url('IMG_5931.jpg')"></div>
+      <div class="hero-slide"        style="background-image:url('IMG_4649.jpg')"></div>
+      <div class="hero-slide"        style="background-image:url('P4140630~2.JPG')"></div>
+      <div class="hero-slide"        style="background-image:url('IMG_2372.jpg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Sierra de Bèrnia · Costa Blanca · Spanje</p>
+      <h1>Casa Bèrnia</h1>
+      <p>Een authentieke stenen villa met panoramisch uitzicht op zee én bergen — uw eigen paradijs in het hart van de Bèrnia natuurreservaat</p>
+      <a href="#availability" class="btn-hero">Bekijk beschikbaarheid</a>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ══ FEITEN-BALK ═══════════════════════════════════ -->
+  <div class="facts-bar">
+    <div class="fact">
+      <div class="fact-icon">🛏</div>
+      <div class="fact-label">Slaapkamers</div>
+      <div class="fact-value">4</div>
+    </div>
+    <div class="fact">
+      <div class="fact-icon">🚿</div>
+      <div class="fact-label">Badkamers</div>
+      <div class="fact-value">3</div>
+    </div>
+    <div class="fact">
+      <div class="fact-icon">👥</div>
+      <div class="fact-label">Max. gasten</div>
+      <div class="fact-value">8</div>
+    </div>
+    <div class="fact">
+      <div class="fact-icon">🌊</div>
+      <div class="fact-label">Uitzicht</div>
+      <div class="fact-value">Zee &amp; Bergen</div>
+    </div>
+    <div class="fact">
+      <div class="fact-icon">🔑</div>
+      <div class="fact-label">Ingang</div>
+      <div class="fact-value">Privé</div>
+    </div>
+    <div class="fact">
+      <div class="fact-icon">💶</div>
+      <div class="fact-label">Vanaf</div>
+      <div class="fact-value">€500 / week</div>
+    </div>
+  </div>
+
+  <!-- ══ OVER DE VILLA ══════════════════════════════════ -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="P4140537~2.JPG" alt="Gevel van de stenen villa met bergachtergrond" class="about-img-main" />
+        <img src="P4140539~2.JPG" alt="Sfeervolle ingang met bloemen" class="about-img-accent" />
+      </div>
+      <div class="about-text reveal">
+        <span class="section-eyebrow">Over de woning</span>
+        <h2>Uw privé-retraite in de bergen</h2>
+        <div class="divider"></div>
+        <p>Genesteld aan de voet van de Sierra de Bèrnia staat Casa Bèrnia: een prachtig gerestaureerde traditionele stenen finca op een hoogte van 60 meter, met een onbelemmerd panoramisch uitzicht in de richting van Moraira en Benissa. Of het nu strak blauw is, er wolken hangen of de zon ondergaat achter de bergen — het uitzicht is altijd spectaculair. En altijd is de zee te zien. Op heldere dagen is zelfs Ibiza zichtbaar aan de horizon.</p>
+        <p>Het te huren gedeelte betreft de volledige bovenverdieping van de villa. Dit is een <strong>volledig zelfstandige woonunit</strong> met een eigen privé-ingang, privé-parkeerplaats en alles wat u nodig heeft voor een onvergetelijk verblijf. Er is ruimte voor maximaal 8 personen verdeeld over 4 ruime slaapkamers, elk met een tweepersoonsbed.</p>
+        <p>De ruime woonkamer en de grote eetkamer hebben elk een adembenemend uitzicht op zowel de zee als de imposante bergkam van de Sierra de Bèrnia. De eigenaren bewonen de begane grond en zijn altijd in de buurt voor lokale tips of hulp.</p>
+        <div class="about-badge">
+          <span>📍</span>
+          <span>Nabij <strong>Jalón / Xaló</strong>, Alicante — op 60 meter hoogte, altijd zee in zicht</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlights strip -->
+    <div class="highlights reveal" style="margin-top:4rem;">
+      <div class="highlight">
+        <span class="hl-icon">🛋️</span>
+        <h3>Ruime woonkamer</h3>
+        <p>Lichte, comfortabele living met panoramisch uitzicht op zee én de Sierra de Bèrnia — perfect om te ontspannen na een dag wandelen of een dagje strand.</p>
+      </div>
+      <div class="highlight">
+        <span class="hl-icon">🍽️</span>
+        <h3>Grote eetkamer</h3>
+        <p>Een ruime eetkamer met uitzicht op zee en bergen — ideaal voor gezamenlijke maaltijden met het hele gezelschap. Plek zat voor 8 personen aan tafel.</p>
+      </div>
+      <div class="highlight">
+        <span class="hl-icon">🔑</span>
+        <h3>Volledig zelfstandig</h3>
+        <p>Eigen privé-opgang, eigen parkeerplaats voor de deur, en totale privacy. U bent volstrekt onafhankelijk van de eigenaren op de begane grond.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HET UITZICHT ═════════════════════════════════════ -->
+  <section id="uitzicht" style="background:var(--dark); padding:5rem 4%; color:#fff;">
+    <div class="text-center reveal" style="margin-bottom:3rem;">
+      <span class="section-eyebrow" style="color:var(--gold-lt);">Op 60 meter hoogte</span>
+      <h2 style="color:#fff;">Het uitzicht — altijd spectaculair</h2>
+      <div class="divider center" style="background:var(--gold-lt);"></div>
+      <p style="color:rgba(255,255,255,0.75); margin:0 auto; max-width:60ch;">
+        Of de lucht strak blauw is, er dramatische wolken samenpakken of de zon opkomt achter de Sierra de Bèrnia in een vuurzee van oranje en rood — het uitzicht vanuit Casa Bèrnia is altijd de moeite waard. De zee is er altijd. En op heldere dagen ziet u Ibiza.
+      </p>
+    </div>
+
+    <!-- Groot panorama -->
+    <div class="reveal" style="max-width:1300px; margin:0 auto 0.6rem; overflow:hidden; border-radius:3px; cursor:pointer;" onclick="openViewLb(0)">
+      <img src="IMG_2374.jpg" alt="Panoramisch uitzicht bij zonsopkomst vanuit Casa Bèrnia"
+           style="width:100%; max-height:420px; object-fit:cover; display:block; transition:transform 0.5s;"
+           onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" />
+    </div>
+
+    <!-- Rij van vier -->
+    <div class="reveal" style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.6rem; max-width:1300px; margin:0 auto;">
+      <div style="overflow:hidden; border-radius:3px; cursor:pointer;" onclick="openViewLb(1)">
+        <img src="IMG_5928.jpg" alt="Panoramische zonsopkomst"
+             style="width:100%; aspect-ratio:1; object-fit:cover; display:block; transition:transform 0.5s;"
+             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+      <div style="overflow:hidden; border-radius:3px; cursor:pointer;" onclick="openViewLb(2)">
+        <img src="IMG_4607.jpg" alt="Vuurrode avondlucht"
+             style="width:100%; aspect-ratio:1; object-fit:cover; display:block; transition:transform 0.5s;"
+             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+      <div style="overflow:hidden; border-radius:3px; cursor:pointer;" onclick="openViewLb(3)">
+        <img src="IMG_5931.jpg" alt="Sierra de Bèrnia gloeit rood in het avondlicht"
+             style="width:100%; aspect-ratio:1; object-fit:cover; display:block; transition:transform 0.5s;"
+             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+      <div style="overflow:hidden; border-radius:3px; cursor:pointer;" onclick="openViewLb(4)">
+        <img src="IMG_4649.jpg" alt="Zonsopkomst richting Moraira en de zee"
+             style="width:100%; aspect-ratio:1; object-fit:cover; display:block; transition:transform 0.5s;"
+             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+    </div>
+
+    <!-- Drie feiten -->
+    <div class="reveal" style="display:flex; justify-content:center; flex-wrap:wrap; gap:3rem; margin-top:3rem; text-align:center;">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.4rem; color:var(--gold-lt);">60 m</div>
+        <div style="font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; opacity:0.65; margin-top:0.2rem;">Hoogte boven zeespiegel</div>
+      </div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.4rem; color:var(--gold-lt);">360°</div>
+        <div style="font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; opacity:0.65; margin-top:0.2rem;">Berg &amp; zeepanorama</div>
+      </div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.4rem; color:var(--gold-lt);">Ibiza</div>
+        <div style="font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; opacity:0.65; margin-top:0.2rem;">Zichtbaar op heldere dagen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- View lightbox -->
+  <div class="lightbox" id="viewLightbox">
+    <span class="lightbox-close" id="vlbClose">✕</span>
+    <button class="lightbox-prev" id="vlbPrev">‹</button>
+    <img id="vlbImg" src="" alt="" />
+    <button class="lightbox-next" id="vlbNext">›</button>
+  </div>
+
+  <!-- ══ FOTOGALERIJ ════════════════════════════════════ -->
+  <section id="gallery" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="text-center reveal" style="margin-bottom:2.5rem;">
+      <span class="section-eyebrow">Fotogalerij</span>
+      <h2>Een kijkje binnen</h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-src="P4140545~2.JPG">
+        <img src="P4140545~2.JPG" alt="Panoramisch uitzicht – villa met bergachtergrond" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140670.JPG">
+        <img src="P4140670.JPG" alt="Badkamer met traditioneel blauw mozaïek" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140588~2.JPG">
+        <img src="P4140588~2.JPG" alt="Slaapkamer 1" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140573~2.JPG">
+        <img src="P4140573~2.JPG" alt="Bergzicht vanuit de slaapkamer" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140630~2.JPG">
+        <img src="P4140630~2.JPG" alt="Slaapkamer in avondlicht" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140684~2.JPG">
+        <img src="P4140684~2.JPG" alt="Traditionele houten glas-in-looddeur" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140639~3.JPG">
+        <img src="P4140639~3.JPG" alt="Slaapkamer 2" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140676~2.JPG">
+        <img src="P4140676~2.JPG" alt="Entreehal" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-src="P4140624~2.JPG">
+        <img src="P4140624~2.JPG" alt="Slaapkamer met terrastoegang" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lbClose">✕</span>
+    <button class="lightbox-prev" id="lbPrev">‹</button>
+    <img id="lbImg" src="" alt="" />
+    <button class="lightbox-next" id="lbNext">›</button>
+  </div>
+
+  <!-- ══ VOORZIENINGEN ══════════════════════════════════ -->
+  <section id="amenities">
+    <div class="amenities-inner">
+      <div class="text-center reveal" style="margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Wat is inbegrepen</span>
+        <h2>Voorzieningen</h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="amenities-grid reveal">
+        <div class="amenity">
+          <div class="amenity-icon">🛏</div>
+          <div>
+            <div class="amenity-name">4 Slaapkamers</div>
+            <div class="amenity-desc">Elk met een tweepersoonsbed — comfortabel voor maximaal 8 personen</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🛋️</div>
+          <div>
+            <div class="amenity-name">Ruime woonkamer</div>
+            <div class="amenity-desc">Panoramisch uitzicht op zee én de Sierra de Bèrnia</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🍽️</div>
+          <div>
+            <div class="amenity-name">Grote eetkamer</div>
+            <div class="amenity-desc">Zeezicht én bergzicht, ruimte voor het hele gezelschap</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🍳</div>
+          <div>
+            <div class="amenity-name">Volledig uitgeruste keuken</div>
+            <div class="amenity-desc">Alles aanwezig om heerlijk te koken</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🚿</div>
+          <div>
+            <div class="amenity-name">3 Badkamers</div>
+            <div class="amenity-desc">Waaronder één met bijzondere blauwe mozaïektegels, bad en douche</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🅿️</div>
+          <div>
+            <div class="amenity-name">Privé-parkeerplaats</div>
+            <div class="amenity-desc">Eigen parkeerplek bij de privé-ingang</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🔑</div>
+          <div>
+            <div class="amenity-name">Zelfstandige woonunit</div>
+            <div class="amenity-desc">Volledig eigen ingang — totale privacy</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🌅</div>
+          <div>
+            <div class="amenity-name">Vergezichten</div>
+            <div class="amenity-desc">Panoramisch uitzicht op zee én bergen vanuit elke ruimte</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">📶</div>
+          <div>
+            <div class="amenity-name">Wifi</div>
+            <div class="amenity-desc">Snel internet aanwezig</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🌿</div>
+          <div>
+            <div class="amenity-name">Terras / buitenruimte</div>
+            <div class="amenity-desc">Geniet van de berglucht en het spectaculaire uitzicht</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🧺</div>
+          <div>
+            <div class="amenity-name">Handdoeken &amp; beddengoed</div>
+            <div class="amenity-desc">Wordt verzorgd — hoeft u niet mee te nemen</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🤝</div>
+          <div>
+            <div class="amenity-name">Gastvrije eigenaren</div>
+            <div class="amenity-desc">Wonen op de begane grond — altijd beschikbaar voor tips</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🥾</div>
+          <div>
+            <div class="amenity-name">Wandelen voor de deur</div>
+            <div class="amenity-desc">De Lonely Planet Bèrnia Loop begint vlakbij</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🏠</div>
+          <div>
+            <div class="amenity-name">Traditionele steenbouw</div>
+            <div class="amenity-desc">Authentiek gerestaureerde Spaanse finca</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXTRA SERVICES ════════════════════════════════ -->
+  <section id="services" style="background:var(--stone); padding:5rem 4%;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="text-center reveal" style="margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Op aanvraag beschikbaar</span>
+        <h2>Extra services</h2>
+        <div class="divider center"></div>
+        <p style="color:#555; margin:0 auto;">Wij denken graag met u mee om uw verblijf zo comfortabel en smaakvol mogelijk te maken. De onderstaande services zijn optioneel en op aanvraag te boeken.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:900px; margin:0 auto;" class="reveal services-grid">
+
+        <!-- Schoonmaakster -->
+        <div style="background:#fff; border:1px solid #e0dbd4; border-radius:4px; padding:2rem; border-top:3px solid var(--gold);">
+          <div style="font-size:2rem; margin-bottom:0.8rem;">🧹</div>
+          <h3 style="font-size:1.4rem; margin-bottom:0.8rem;">Schoonmaakservice</h3>
+          <p style="color:#555; font-size:0.88rem; margin-bottom:1rem;">
+            Wij kunnen voor u een professionele schoonmaakster inschakelen die de woning tijdens uw verblijf bijhoudt — zodat u zich geen moment zorgen hoeft te maken en optimaal kunt genieten van uw vakantie.
+          </p>
+          <ul style="list-style:none; font-size:0.83rem; color:#666;">
+            <li style="padding:0.3rem 0; border-bottom:1px solid #f0ece6;">✓ &nbsp;Tussentijdse schoonmaak (op afspraak)</li>
+            <li style="padding:0.3rem 0; border-bottom:1px solid #f0ece6;">✓ &nbsp;Vers beddengoed &amp; handdoeken wisselen</li>
+            <li style="padding:0.3rem 0;">✓ &nbsp;Eindschoonmaak standaard inbegrepen</li>
+          </ul>
+          <p style="margin-top:1.2rem; font-size:0.8rem; color:#999;">Prijs op aanvraag · Reserveer bij boeking</p>
+        </div>
+
+        <!-- Kokin -->
+        <div style="background:#fff; border:1px solid #e0dbd4; border-radius:4px; padding:2rem; border-top:3px solid var(--gold);">
+          <div style="font-size:2rem; margin-bottom:0.8rem;">👩‍🍳</div>
+          <h3 style="font-size:1.4rem; margin-bottom:0.8rem;">Privé-kokin</h3>
+          <p style="color:#555; font-size:0.88rem; margin-bottom:1rem;">
+            Wij kunnen een lokale Spaanse kokin voor u regelen die bij u thuis — in de woning — traditionele gerechten bereidt. Een unieke culinaire ervaring die u meeneemt naar het hart van de Valenciaanse keuken.
+          </p>
+          <div style="font-size:0.83rem; color:#666; line-height:1.9;">
+            <strong style="color:#555; display:block; margin-bottom:0.4rem;">Specialiteiten:</strong>
+            <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+              <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">🥘 Paella valenciana</span>
+              <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">🍝 Fideuà</span>
+              <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">🍚 Arroz al horno</span>
+              <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">🐙 Pulpo a la gallega</span>
+              <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">🫕 Arroz a banda</span>
+              <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">& meer...</span>
+            </div>
+          </div>
+          <p style="margin-top:1.2rem; font-size:0.8rem; color:#999;">Prijs op aanvraag · Reserveer bij boeking · Boodschappen niet inbegrepen</p>
+        </div>
+
+      </div>
+      <p class="cal-note reveal" style="max-width:700px; margin:2rem auto 0;">
+        Heeft u interesse in één van deze services? Vermeld dit in uw boekingsaanvraag of neem contact op via WhatsApp, dan regelen wij alles voor u.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    @media (max-width: 700px) {
+      .services-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  <!-- ══ WANDELEN ═══════════════════════════════════════ -->
+  <section id="hiking">
+    <div class="hiking-inner reveal">
+      <span class="section-eyebrow">Natuur &amp; avontuur</span>
+      <h2>De Serra de Bèrnia Loop</h2>
+      <div class="divider center"></div>
+      <div class="hiking-lp">
+        <span>📖</span> Aanbevolen in <strong>Lonely Planet</strong> — Serra de Bèrnia Loop Walk
+      </div>
+      <p class="hiking-desc">
+        Eén van de mooiste wandelingen van de Costa Blanca begint vrijwel bij uw voordeur. De Serra de Bèrnia Loop is door Lonely Planet geprezen vanwege de dramatische kalkstenen bergkammen, het weidsheid panorama richting Moraira en Benissa en het iconische Fort Bèrnia — een 16e-eeuwse Spaanse vesting hoog boven de Middellandse Zee.
+      </p>
+      <div class="hiking-stats">
+        <div class="hiking-stat">
+          <span class="hiking-stat-value">~13 km</span>
+          <span class="hiking-stat-label">Afstand</span>
+        </div>
+        <div class="hiking-stat">
+          <span class="hiking-stat-value">~700 m</span>
+          <span class="hiking-stat-label">Hoogteverschil</span>
+        </div>
+        <div class="hiking-stat">
+          <span class="hiking-stat-value">4–5 uur</span>
+          <span class="hiking-stat-label">Duur</span>
+        </div>
+        <div class="hiking-stat">
+          <span class="hiking-stat-value">◆◆◇◇</span>
+          <span class="hiking-stat-label">Moeilijkheidsgraad</span>
+        </div>
+      </div>
+      <p class="hiking-desc">
+        Het pad slingert door wilde rozemarijn, tijm en eeuwenoude amandelboomgaarden voordat het omhoog klimt naar de bergkam en het befaamde rotskanaal (el forat) dat dwars door de berg loopt. Op een heldere dag ziet u Ibiza aan de horizon. Op heldere dagen is zelfs Ibiza zichtbaar. Dit is wandelen op zijn allerbest — en Casa Bèrnia zet u precies op de goede plek.
+      </p>
+      <a href="https://www.lonelyplanet.com" target="_blank" rel="noopener" class="btn-outline-white">Meer lezen op Lonely Planet ↗</a>
+    </div>
+  </section>
+
+  <!-- ══ LIGGING ════════════════════════════════════════ -->
+  <section id="location">
+    <div class="location-grid">
+      <div class="reveal">
+        <span class="section-eyebrow">Ligging</span>
+        <h2>Uitstekend gelegen</h2>
+        <div class="divider"></div>
+        <p style="color:#555;">Casa Bèrnia ligt in de uitlopers van de Sierra de Bèrnia, op een korte rit van het charmante wijndorp Jalón (Xaló) — bekend om zijn weekmarkt, lokale bodegas en traditionele tapasbarretjes. Het uitzicht vanuit de woning strekt zich uit richting Moraira en Benissa, met altijd de zee in het verschiet. Op heldere dagen is zelfs Ibiza zichtbaar.</p>
+        <p style="color:#555;">U bent dicht genoeg bij de zee voor een dagje strand, maar hoog genoeg in de bergen voor koele avonden, schone lucht en absolute stilte.</p>
+        <ul class="nearby-list">
+          <li><span>Jalón dorpscentrum</span>             <span class="dist">15 min 🚗</span></li>
+          <li><span>Benissa</span>                        <span class="dist">20 min 🚗</span></li>
+          <li><span>Moraira</span>                        <span class="dist">40 min 🚗</span></li>
+          <li><span>Calpe</span>                          <span class="dist">30 min 🚗</span></li>
+          <li><span>Mediterrane stranden</span>           <span class="dist">30 min 🚗</span></li>
+          <li><span>Dénia</span>                          <span class="dist">50 min 🚗</span></li>
+          <li><span>Vliegveld Alicante (ALC)</span>       <span class="dist">1u15 🚗</span></li>
+          <li><span>Vliegveld Valencia (VLC)</span>       <span class="dist">1u30 🚗</span></li>
+          <li><span>Vliegveld Castellón (CDT)</span>      <span class="dist">1u15 🚗</span></li>
+          <li><span>Start Bèrnia Loop</span>              <span class="dist">Direct 🥾</span></li>
+        </ul>
+        <div class="about-badge" style="margin-top:1.5rem;">
+          <span>✈️</span>
+          <div style="font-size:0.82rem; line-height:1.6;">
+            <strong>Vluchttijden:</strong> Alicante ca. 2u30 · Valencia ca. 2u15 · Castellón ca. 2u15<br />
+            <strong>Tip autohuur:</strong> Wij adviseren te huren via <a href="https://www.doyouspain.com" target="_blank" rel="noopener" style="color:var(--gold);">doyouspain.com</a> — scherpe prijzen en betrouwbare service. Castellón heeft in de zomer vaak lage vluchttarieven, maar auto's zijn daar duurder; Alicante biedt doorgaans de beste combinatie.
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <!-- Exacte locatie: 38°40'26.6"N 0°02'23.0"W -->
+        <iframe
+          class="map-embed"
+          src="https://maps.google.com/maps?q=38.674056,-0.039722&z=15&output=embed"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Kaart – Casa Bèrnia, Sierra de Bèrnia">
+        </iframe>
+        <p style="font-size:0.75rem; color:#999; margin-top:0.5rem;">📍 Sierra de Bèrnia, Jalón/Xaló · <a href="https://maps.google.com/?q=38.674056,-0.039722" target="_blank" rel="noopener" style="color:var(--gold);">Open in Google Maps ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BESCHIKBAARHEID ════════════════════════════════ -->
+  <section id="availability">
+    <div class="availability-inner">
+      <div class="text-center reveal" style="margin-bottom:2rem;">
+        <span class="section-eyebrow">Plan uw verblijf</span>
+        <h2>Beschikbaarheidskalender</h2>
+        <div class="divider center"></div>
+        <p style="margin:0 auto; color:#555;">Controleer welke weken vrij zijn en neem contact op om uw data te reserveren. De rode datums zijn al geboekt.</p>
+      </div>
+      <div class="cal-legend reveal">
+        <div class="cal-legend-item"><div class="cal-dot available"></div> Beschikbaar</div>
+        <div class="cal-legend-item"><div class="cal-dot booked"></div> Geboekt / niet beschikbaar</div>
+        <div class="cal-legend-item"><div class="cal-dot past"></div> Verleden datum</div>
+      </div>
+      <div class="calendars-wrap reveal" id="calendarsWrap"></div>
+      <p class="cal-note reveal">
+        Neem contact op via het formulier hieronder of stuur een WhatsApp-bericht om uw data te reserveren. Wij reageren doorgaans binnen 24 uur.
+        Minimale verblijfsduur: 1 week (bij voorkeur zaterdag tot zaterdag).
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ TARIEVEN ════════════════════════════════════════ -->
+  <section id="pricing">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div class="text-center reveal" style="margin-bottom:2.5rem;">
+        <span class="section-eyebrow">Transparante prijzen</span>
+        <h2>Tarieven</h2>
+        <div class="divider center" style="background:var(--gold-lt);"></div>
+      </div>
+      <div class="price-cards reveal">
+        <div class="price-card">
+          <div class="price-season">Laagseizoen</div>
+          <div class="price-amount"><sup>€</sup>450<sub>/week</sub></div>
+          <div class="price-info">November – maart (excl. kerst/oud &amp; nieuw)</div>
+          <ul class="price-includes">
+            <li>Eindschoonmaak inbegrepen</li>
+            <li>Beddengoed &amp; handdoeken</li>
+            <li>Wifi</li>
+            <li>Privé-parkeerplaats</li>
+          </ul>
+        </div>
+        <div class="price-card featured">
+          <div class="price-season">Middenseizoen</div>
+          <div class="price-amount"><sup>€</sup>500<sub>/week</sub></div>
+          <div class="price-info">April – juni &amp; september – oktober</div>
+          <ul class="price-includes">
+            <li>Eindschoonmaak inbegrepen</li>
+            <li>Beddengoed &amp; handdoeken</li>
+            <li>Wifi</li>
+            <li>Privé-parkeerplaats</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-season">Hoogseizoen</div>
+          <div class="price-amount"><sup>€</sup>650<sub>/week</sub></div>
+          <div class="price-info">Juli – augustus &amp; kerst / oud &amp; nieuw</div>
+          <ul class="price-includes">
+            <li>Eindschoonmaak inbegrepen</li>
+            <li>Beddengoed &amp; handdoeken</li>
+            <li>Wifi</li>
+            <li>Privé-parkeerplaats</li>
+          </ul>
+        </div>
+      </div>
+      <p class="price-note reveal">Prijzen zijn voor de gehele woning (maximaal 8 personen). Geen verborgen kosten. Een aanbetaling van 25% is vereist om uw boeking te bevestigen; het resterende bedrag is verschuldigd 4 weken voor aankomst. Annuleringsbeleid op aanvraag beschikbaar.</p>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-eyebrow">Neem contact op</span>
+        <h2>Reserveer uw verblijf</h2>
+        <div class="divider"></div>
+        <p style="color:#555;">Wij verwelkomen u graag bij Casa Bèrnia! Vul het formulier in en wij reageren binnen 24 uur om de beschikbaarheid te bevestigen en uw vragen te beantwoorden.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">✉️</span>
+          <div>
+            <strong>E-mail</strong><br />
+            <!-- *** VERVANG dit door uw eigen e-mailadres *** -->
+            <a href="mailto:info@casabernia.com">info@casabernia.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <div>
+            <strong>Locatie</strong><br />
+            Sierra de Bèrnia, nabij Jalón / Xaló<br />
+            Alicante, Costa Blanca, Spanje
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">🌐</span>
+          <div>
+            <strong>Talen</strong><br />
+            Nederlands · Engels · Spaans
+          </div>
+        </div>
+        <a href="https://wa.me/31681047290?text=Hallo%2C%20ik%20ben%20ge%C3%AFnteresseerd%20in%20het%20huren%20van%20Casa%20B%C3%A8rnia." class="btn-whatsapp" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp ons
+        </a>
+      </div>
+
+      <div class="reveal">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Voornaam *</label>
+              <input type="text" id="fname" name="fname" required placeholder="Uw voornaam" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Achternaam *</label>
+              <input type="text" id="lname" name="lname" required placeholder="Uw achternaam" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mailadres *</label>
+            <input type="email" id="email" name="email" required placeholder="uw@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefoon / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="+31 6 ..." />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="arrival">Aankomstdatum *</label>
+              <input type="date" id="arrival" name="arrival" required />
+            </div>
+            <div class="form-group">
+              <label for="departure">Vertrekdatum *</label>
+              <input type="date" id="departure" name="departure" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="guests">Aantal personen *</label>
+            <select id="guests" name="guests" required>
+              <option value="">Selecteer...</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Bericht</label>
+            <textarea id="message" name="message" placeholder="Vragen, bijzondere wensen of andere informatie die wij moeten weten..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Verstuur aanvraag →</button>
+          <div class="form-success" id="formSuccess">
+            Bedankt voor uw bericht! Wij nemen binnen 24 uur contact met u op om uw data te bevestigen.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════ -->
+  <footer>
+    <span class="foot-logo">Casa Bèrnia</span>
+    <p>Authentieke stenen villa · Sierra de Bèrnia · Costa Blanca, Spanje</p>
+    <div class="foot-links">
+      <a href="#about">De Villa</a>
+      <a href="#gallery">Foto's</a>
+      <a href="#services">Services</a>
+      <a href="#hiking">Wandelen</a>
+      <a href="#availability">Beschikbaarheid</a>
+      <a href="#pricing">Tarieven</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p style="margin-top:1rem;">&copy; <span id="footYear"></span> Casa Bèrnia. Alle rechten voorbehouden.</p>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════════════ -->
+  <script>
+  // ╔══════════════════════════════════════════════════╗
+  // ║  BEZETTE DATA INVULLEN                           ║
+  // ║  Formaat: ["JJJJ-MM-DD", "JJJJ-MM-DD"]         ║
+  // ║  (startdatum, einddatum – beide inclusief)       ║
+  // ║  Verwijder de // voor elk voorbeeld om het       ║
+  // ║  te activeren, of voeg nieuwe regels toe.        ║
+  // ╚══════════════════════════════════════════════════╝
+  const BOOKED_RANGES = [
+    // Voorbeelden — vervang of verwijder:
+    // ["2025-07-05", "2025-07-19"],
+    // ["2025-08-02", "2025-08-16"],
+  ];
+
+  // Hoeveel maanden weergeven in de kalender
+  const MONTHS_TO_SHOW = 4;
+
+  // ─── Hero diashow ───────────────────────────────────
+  const slides   = document.querySelectorAll('.hero-slide');
+  const dotsWrap = document.getElementById('heroDots');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goSlide(i);
+    dotsWrap.appendChild(d);
+  });
+
+  function goSlide(n) {
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+  }
+  setInterval(() => goSlide(current + 1), 5500);
+
+  // ─── Nav scroll ─────────────────────────────────────
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ─── Mobiel menu ────────────────────────────────────
+  document.getElementById('burgerBtn').onclick = () =>
+    document.getElementById('mobileNav').classList.add('open');
+  document.getElementById('mobileNavClose').onclick = closeMobileNav;
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // ─── Footer jaar ────────────────────────────────────
+  document.getElementById('footYear').textContent = new Date().getFullYear();
+
+  // ─── Scroll reveal ──────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer  = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ─── Galerij lightbox ───────────────────────────────
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lbImg');
+  let lbIndex    = 0;
+  const allSrcs  = [...galleryItems].map(el => el.dataset.src);
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+  });
+  function openLightbox(i) {
+    lbIndex = i; lbImg.src = allSrcs[lbIndex];
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  document.getElementById('lbClose').onclick = closeLightbox;
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lbPrev').onclick = () => { lbIndex = (lbIndex - 1 + allSrcs.length) % allSrcs.length; lbImg.src = allSrcs[lbIndex]; };
+  document.getElementById('lbNext').onclick = () => { lbIndex = (lbIndex + 1) % allSrcs.length; lbImg.src = allSrcs[lbIndex]; };
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowLeft')   document.getElementById('lbPrev').click();
+    if (e.key === 'ArrowRight')  document.getElementById('lbNext').click();
+  });
+
+  // ─── Beschikbaarheidskalender ───────────────────────
+  (function buildCalendars() {
+    const bookedSet = new Set();
+    BOOKED_RANGES.forEach(([start, end]) => {
+      const d = new Date(start), e = new Date(end);
+      while (d <= e) {
+        bookedSet.add(d.toISOString().slice(0, 10));
+        d.setDate(d.getDate() + 1);
+      }
+    });
+
+    const today    = new Date(); today.setHours(0,0,0,0);
+    const todayStr = today.toISOString().slice(0, 10);
+    const wrap     = document.getElementById('calendarsWrap');
+
+    const monthNames = ['Januari','Februari','Maart','April','Mei','Juni',
+                        'Juli','Augustus','September','Oktober','November','December'];
+    const dayNames   = ['Ma','Di','Wo','Do','Vr','Za','Zo'];
+
+    for (let m = 0; m < MONTHS_TO_SHOW; m++) {
+      const dt = new Date(today.getFullYear(), today.getMonth() + m, 1);
+      const yr = dt.getFullYear(), mo = dt.getMonth();
+
+      const calEl = document.createElement('div');
+      calEl.className = 'cal-month';
+
+      const hdr = document.createElement('div');
+      hdr.className = 'cal-header';
+      hdr.textContent = monthNames[mo] + ' ' + yr;
+      calEl.appendChild(hdr);
+
+      const daysHdr = document.createElement('div');
+      daysHdr.className = 'cal-days-header';
+      dayNames.forEach(d => {
+        const s = document.createElement('span');
+        s.textContent = d; daysHdr.appendChild(s);
+      });
+      calEl.appendChild(daysHdr);
+
+      const daysGrid = document.createElement('div');
+      daysGrid.className = 'cal-days';
+
+      let firstDay = new Date(yr, mo, 1).getDay();
+      firstDay = (firstDay + 6) % 7; // Maandag = 0
+      for (let b = 0; b < firstDay; b++) {
+        const cell = document.createElement('div');
+        cell.className = 'cal-day empty';
+        daysGrid.appendChild(cell);
+      }
+
+      const daysInMonth = new Date(yr, mo + 1, 0).getDate();
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = yr + '-' + String(mo+1).padStart(2,'0') + '-' + String(day).padStart(2,'0');
+        const d = new Date(yr, mo, day);
+        const cell = document.createElement('div');
+        cell.textContent = day;
+
+        if (d < today)                  cell.className = 'cal-day past';
+        else if (bookedSet.has(dateStr)) cell.className = 'cal-day booked';
+        else                            cell.className = 'cal-day available';
+
+        if (dateStr === todayStr) cell.classList.add('today');
+        daysGrid.appendChild(cell);
+      }
+
+      calEl.appendChild(daysGrid);
+      wrap.appendChild(calEl);
+    }
+  })();
+
+  // ─── Uitzicht lightbox ──────────────────────────────
+  const viewSrcs = ['IMG_5928.jpg','IMG_2374.jpg','IMG_4607.jpg','IMG_5931.jpg','IMG_4649.jpg','IMG_2372.jpg','IMG_5933.jpg'];
+  const vlb    = document.getElementById('viewLightbox');
+  const vlbImg = document.getElementById('vlbImg');
+  let vlbIndex = 0;
+
+  window.openViewLb = function(i) {
+    vlbIndex = i; vlbImg.src = viewSrcs[vlbIndex];
+    vlb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  document.getElementById('vlbClose').onclick = () => { vlb.classList.remove('open'); document.body.style.overflow = ''; };
+  vlb.addEventListener('click', e => { if (e.target === vlb) { vlb.classList.remove('open'); document.body.style.overflow = ''; } });
+  document.getElementById('vlbPrev').onclick = () => { vlbIndex = (vlbIndex - 1 + viewSrcs.length) % viewSrcs.length; vlbImg.src = viewSrcs[vlbIndex]; };
+  document.getElementById('vlbNext').onclick = () => { vlbIndex = (vlbIndex + 1) % viewSrcs.length; vlbImg.src = viewSrcs[vlbIndex]; };
+
+  // ─── Contactformulier → mailto ──────────────────────
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fname    = document.getElementById('fname').value;
+    const lname    = document.getElementById('lname').value;
+    const email    = document.getElementById('email').value;
+    const phone    = document.getElementById('phone').value;
+    const arrival  = document.getElementById('arrival').value;
+    const departure= document.getElementById('departure').value;
+    const guests   = document.getElementById('guests').value;
+    const message  = document.getElementById('message').value;
+
+    const body = encodeURIComponent(
+      `Naam: ${fname} ${lname}\n` +
+      `E-mail: ${email}\n` +
+      `Telefoon: ${phone}\n` +
+      `Aankomst: ${arrival}\n` +
+      `Vertrek: ${departure}\n` +
+      `Personen: ${guests}\n\n` +
+      `Bericht:\n${message}`
+    );
+
+    // *** VERVANG door uw eigen e-mailadres ***
+    window.location.href =
+      `mailto:info@casabernia.com?subject=Verhuurvraag%20Casa%20B%C3%A8rnia&body=${body}`;
+
+    document.getElementById('formSuccess').style.display = 'block';
+    this.reset();
+    setTimeout(() => document.getElementById('formSuccess').style.display = 'none', 6000);
+  });
+  </script>
+
+</body>
+</html>
