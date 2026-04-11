@@ -378,14 +378,21 @@
       font-size: 0.82rem; border: 1px solid transparent;
     }
     .cal-day.past    { color: #bbb; }
-    .cal-day.booked  {
-      background: #fde8e8; color: #c04040;
-      font-weight: 500; border-radius: 2px;
-    }
-    .cal-day.available { color: #2a2a2a; }
-    .cal-day.today {
-      font-weight: 700; border: 1px solid var(--gold);
-      border-radius: 2px;
+   /* Basis bezet */
+.cal-day.booked {
+  background: #fde8e8; color: #c04040;
+  font-weight: 500; border-radius: 2px;
+}
+/* Optioneel / aangevraagd */
+.cal-day.optie {
+  background: #fff4e0; color: #b06000;
+  font-weight: 500; border-radius: 2px;
+}
+/* Eigen gebruik / geblokkeerd */
+.cal-day.geblokkeerd {
+  background: #ece8f5; color: #5a3ea0;
+  font-weight: 500; border-radius: 2px;
+}
     }
     .cal-note {
       margin-top: 1.5rem; font-size: 0.82rem; color: #777;
