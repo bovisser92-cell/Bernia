@@ -353,7 +353,7 @@
     .cal-legend-item { display: flex; align-items: center; gap: 0.5rem; }
     .cal-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
     .cal-dot.available { background: #3a8a45; }
-    .cal-dot.    { background: #c04040; }
+    .cal-dot.booked    { background: #c04040; }
     .cal-dot.past      { background: #ccc; }
     .calendars-wrap {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -378,21 +378,14 @@
       font-size: 0.82rem; border: 1px solid transparent;
     }
     .cal-day.past    { color: #bbb; }
-   /* Basis bezet */
-.cal-day. {
-  background: #fde8e8; color: #c04040;
-  font-weight: 500; border-radius: 2px;
-}
-/* Optioneel / aangevraagd */
-.cal-day.optie {
-  background: #fff4e0; color: #b06000;
-  font-weight: 500; border-radius: 2px;
-}
-/* Eigen gebruik / geblokkeerd */
-.cal-day.geblokkeerd {
-  background: #ece8f5; color: #5a3ea0;
-  font-weight: 500; border-radius: 2px;
-}
+    .cal-day.booked  {
+      background: #fde8e8; color: #c04040;
+      font-weight: 500; border-radius: 2px;
+    }
+    .cal-day.available { color: #2a2a2a; }
+    .cal-day.today {
+      font-weight: 700; border: 1px solid var(--gold);
+      border-radius: 2px;
     }
     .cal-note {
       margin-top: 1.5rem; font-size: 0.82rem; color: #777;
@@ -633,7 +626,7 @@
     <div class="fact">
       <div class="fact-icon">💶</div>
       <div class="fact-label">Vanaf</div>
-      <div class="fact-value">€500 / week</div>
+      <div class="fact-value">v.a. €500 / week</div>
     </div>
   </div>
 
@@ -649,7 +642,7 @@
         <h2>Uw privé-retraite in de bergen</h2>
         <div class="divider"></div>
         <p>Genesteld aan de voet van de Sierra de Bèrnia staat Casa Bèrnia: een prachtig gerestaureerde traditionele stenen finca op een hoogte van 600 meter, met een onbelemmerd panoramisch uitzicht in de richting van Moraira en Benissa. Of het nu strak blauw is, er wolken hangen of de zon ondergaat achter de bergen — het uitzicht is altijd spectaculair. En altijd is de zee te zien. Op heldere dagen is zelfs Ibiza zichtbaar aan de horizon.</p>
-        <p>Het te huren gedeelte betreft de volledige bovenverdieping van de villa. Dit is een <strong>volledig zelfstandige woonunit</strong> met een eigen privé-ingang, privé-parkeerplaats en alles wat u nodig heeft voor een onvergetelijk verblijf. Er is ruimte voor maximaal 8 personen verdeeld over 4 knusse slaapkamers, elk met een tweepersoonsbed.</p>
+        <p>Het te huren gedeelte betreft de volledige bovenverdieping van de villa. Dit is een <strong>volledig zelfstandige woonunit</strong> met een eigen privé-ingang, privé-parkeerplaats en alles wat u nodig heeft voor een onvergetelijk verblijf. Er is ruimte voor maximaal 8 personen verdeeld over 4 ruime slaapkamers, elk met een tweepersoonsbed.</p>
         <p>De ruime woonkamer en de grote eetkamer hebben elk een adembenemend uitzicht op zowel de zee als de imposante bergkam van de Sierra de Bèrnia. De eigenaren bewonen de begane grond en zijn altijd in de buurt voor lokale tips of hulp.</p>
         <div class="about-badge">
           <span>📍</span>
@@ -804,7 +797,7 @@
           <div class="amenity-icon">🛏</div>
           <div>
             <div class="amenity-name">4 Slaapkamers</div>
-            <div class="amenity-desc">Elk met een tweepersoonsbed, knus en sfeervol ingericht</div>
+            <div class="amenity-desc">Elk met een tweepersoonsbed — comfortabel voor maximaal 8 personen</div>
           </div>
         </div>
         <div class="amenity">
@@ -832,7 +825,7 @@
           <div class="amenity-icon">🚿</div>
           <div>
             <div class="amenity-name">3 Badkamers</div>
-            <div class="amenity-desc">Waaronder één met bijzondere blauwe mozaïektegels en douche</div>
+            <div class="amenity-desc">Waaronder één met bijzondere blauwe mozaïektegels, bad en douche</div>
           </div>
         </div>
         <div class="amenity">
@@ -928,12 +921,12 @@
           <p style="margin-top:1.2rem; font-size:0.8rem; color:#999;">Prijs op aanvraag · Reserveer bij boeking</p>
         </div>
 
-        <!-- Kokkin -->
+        <!-- Kokin -->
         <div style="background:#fff; border:1px solid #e0dbd4; border-radius:4px; padding:2rem; border-top:3px solid var(--gold);">
           <div style="font-size:2rem; margin-bottom:0.8rem;">👩‍🍳</div>
-          <h3 style="font-size:1.4rem; margin-bottom:0.8rem;">Privé-kokkin</h3>
+          <h3 style="font-size:1.4rem; margin-bottom:0.8rem;">Privé-kokin</h3>
           <p style="color:#555; font-size:0.88rem; margin-bottom:1rem;">
-            Wij kunnen een lokale Spaanse kokkin voor u regelen die bij u thuis — in de woning — traditionele gerechten bereidt. Een unieke culinaire ervaring die u meeneemt naar het hart van de Valenciaanse keuken.
+            Wij kunnen een lokale Spaanse kokin voor u regelen die bij u thuis — in de woning — traditionele gerechten bereidt. Een unieke culinaire ervaring die u meeneemt naar het hart van de Valenciaanse keuken.
           </p>
           <div style="font-size:0.83rem; color:#666; line-height:1.9;">
             <strong style="color:#555; display:block; margin-bottom:0.4rem;">Specialiteiten:</strong>
@@ -1025,6 +1018,12 @@
           <div style="font-size:0.82rem; line-height:1.6;">
             <strong>Vluchttijden:</strong> Alicante ca. 2u30 · Valencia ca. 2u15 · Castellón ca. 2u15<br />
             <strong>Tip autohuur:</strong> Wij adviseren te huren via <a href="https://www.doyouspain.com" target="_blank" rel="noopener" style="color:var(--gold);">doyouspain.com</a> — scherpe prijzen en betrouwbare service. Castellón heeft in de zomer vaak lage vluchttarieven, maar auto's zijn daar duurder; Alicante biedt doorgaans de beste combinatie.
+          </div>
+        </div>
+        <div class="about-badge" style="margin-top:1rem;">
+          <span>🍽️</span>
+          <div style="font-size:0.82rem; line-height:1.6;">
+            <strong>Restaurants op loopafstand:</strong> Twee authentieke Spaanse restaurants vlak bij de woning serveren traditionele gerechten zoals paella, arroz al horno en vlees van de barbecue — een echte lokale ervaring zonder de auto te hoeven pakken.</div>
           </div>
         </div>
       </div>
@@ -1123,7 +1122,7 @@
           <div>
             <strong>E-mail</strong><br />
             <!-- *** VERVANG dit door uw eigen e-mailadres *** -->
-            <a href="mailto:bovisser92@gmail.com">bovisser92@gmail.com</a>
+            <a href="mailto:info@casabernia.com">info@casabernia.com</a>
           </div>
         </div>
         <div class="contact-detail">
@@ -1161,7 +1160,7 @@
           </div>
           <div class="form-group">
             <label for="email">E-mailadres *</label>
-            <input type="email" id="email" name="email" required placeholder="bovisser92@gmail.com" />
+            <input type="email" id="email" name="email" required placeholder="uw@email.com" />
           </div>
           <div class="form-group">
             <label for="phone">Telefoon / WhatsApp</label>
@@ -1227,9 +1226,7 @@
   // ║  te activeren, of voeg nieuwe regels toe.        ║
   // ╚══════════════════════════════════════════════════╝
   const BOOKED_RANGES = [
-    // Voorbeelden — vervang of verwijder:
-     ["2025-04-11", "2025-05-09"],
-    // ["2025-08-02", "2025-08-16"],
+    ["2026-04-11", "2026-05-09"],
   ];
 
   // Hoeveel maanden weergeven in de kalender
@@ -1420,7 +1417,7 @@
 
     // *** VERVANG door uw eigen e-mailadres ***
     window.location.href =
-      `mailto:bovisser92@gmail.com?subject=Verhuurvraag%20Casa%20B%C3%A8rnia&body=${body}`;
+      `mailto:info@casabernia.com?subject=Verhuurvraag%20Casa%20B%C3%A8rnia&body=${body}`;
 
     document.getElementById('formSuccess').style.display = 'block';
     this.reset();
