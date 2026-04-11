@@ -354,6 +354,7 @@
     .cal-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
     .cal-dot.available { background: #3a8a45; }
     .cal-dot.booked    { background: #c04040; }
+    .cal-dot.option    { background: #e6a817; }
     .cal-dot.past      { background: #ccc; }
     .calendars-wrap {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -380,6 +381,10 @@
     .cal-day.past    { color: #bbb; }
     .cal-day.booked  {
       background: #fde8e8; color: #c04040;
+      font-weight: 500; border-radius: 2px;
+    }
+    .cal-day.option  {
+      background: #fff8e1; color: #b8860b;
       font-weight: 500; border-radius: 2px;
     }
     .cal-day.available { color: #2a2a2a; }
@@ -1052,6 +1057,7 @@
       <div class="cal-legend reveal">
         <div class="cal-legend-item"><div class="cal-dot available"></div> Beschikbaar</div>
         <div class="cal-legend-item"><div class="cal-dot booked"></div> Geboekt / niet beschikbaar</div>
+        <div class="cal-legend-item"><div class="cal-dot option"></div> Onder optie</div>
         <div class="cal-legend-item"><div class="cal-dot past"></div> Verleden datum</div>
       </div>
       <div class="calendars-wrap reveal" id="calendarsWrap"></div>
@@ -1229,6 +1235,10 @@
     ["2026-04-11", "2026-05-09"],
   ];
 
+  const OPTION_RANGES = [
+    ["2026-05-09", "2026-05-14"],
+  ];
+
   // Hoeveel maanden weergeven in de kalender
   const MONTHS_TO_SHOW = 4;
 
@@ -1318,6 +1328,15 @@
       }
     });
 
+    const optionSet = new Set();
+    OPTION_RANGES.forEach(([start, end]) => {
+      const d = new Date(start), e = new Date(end);
+      while (d <= e) {
+        optionSet.add(d.toISOString().slice(0, 10));
+        d.setDate(d.getDate() + 1);
+      }
+    });
+
     const today    = new Date(); today.setHours(0,0,0,0);
     const todayStr = today.toISOString().slice(0, 10);
     const wrap     = document.getElementById('calendarsWrap');
@@ -1364,9 +1383,10 @@
         const cell = document.createElement('div');
         cell.textContent = day;
 
-        if (d < today)                  cell.className = 'cal-day past';
-        else if (bookedSet.has(dateStr)) cell.className = 'cal-day booked';
-        else                            cell.className = 'cal-day available';
+        if (d < today)                   cell.className = 'cal-day past';
+        else if (bookedSet.has(dateStr))  cell.className = 'cal-day booked';
+        else if (optionSet.has(dateStr))  cell.className = 'cal-day option';
+        else                             cell.className = 'cal-day available';
 
         if (dateStr === todayStr) cell.classList.add('today');
         daysGrid.appendChild(cell);
