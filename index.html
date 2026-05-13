@@ -33,10 +33,10 @@
     :root {
       --gold:    #9a7b3f;
       --gold-lt: #c9a96e;
-      --green:   #3a5f3e;
+      --green:   #5c4020;
       --stone:   #e8e0d5;
       --off-wh:  #faf8f5;
-      --dark:    #1e1e1e;
+      --dark:    #231408;
     }
 
     /* ─── TYPOGRAPHY ───────────────────────────────── */
@@ -103,7 +103,7 @@
     .hero-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to bottom,
-        rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.68) 100%);
+        rgba(30,15,0,0.05) 0%, rgba(30,15,0,0.22) 60%, rgba(30,15,0,0.44) 100%);
     }
     .hero-content {
       position: relative; z-index: 2;
@@ -289,8 +289,8 @@
     #hiking::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('P4140545~2.JPG') center/cover no-repeat;
-      opacity: 0.15;
+      background: url('IMG_7531.jpg') center 70%/cover no-repeat;
+      opacity: 0.20;
     }
     .hiking-inner {
       position: relative; max-width: 900px; margin: 0 auto;
@@ -402,38 +402,38 @@
     }
 
     /* ─── PRICING ───────────────────────────────────── */
-    #pricing { background: var(--dark); color: #fff; text-align: center; }
-    #pricing .section-eyebrow { color: var(--gold-lt); }
-    #pricing h2 { color: #fff; }
-    #pricing .divider { background: var(--gold-lt); }
+    #pricing { background: #ede8df; color: #231408; text-align: center; }
+    #pricing .section-eyebrow { color: var(--gold); }
+    #pricing h2 { color: #231408; }
+    #pricing .divider { background: var(--gold); }
     .price-cards {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem;
       max-width: 900px; margin: 0 auto;
     }
     .price-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: #fff;
+      border: 1px solid #d4c9b5;
       border-radius: 4px; padding: 2rem 2.5rem;
       min-width: 220px; flex: 1;
     }
-    .price-card.featured { border-color: var(--gold); background: rgba(154,123,63,0.15); }
+    .price-card.featured { border-color: var(--gold); background: rgba(184,154,78,0.12); }
     .price-season { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 0.5rem; }
     .price-amount {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem; color: #fff; line-height: 1;
+      font-size: 3rem; color: #231408; line-height: 1;
     }
     .price-amount sup { font-size: 1.5rem; vertical-align: top; margin-top: 0.5rem; }
-    .price-amount sub { font-size: 1rem; color: rgba(255,255,255,0.5); }
-    .price-info { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
+    .price-amount sub { font-size: 1rem; color: #888; }
+    .price-info { font-size: 0.78rem; color: #888; margin-top: 0.5rem; }
     .price-includes {
       list-style: none; margin-top: 1.2rem; text-align: left;
-      font-size: 0.82rem; color: rgba(255,255,255,0.75);
+      font-size: 0.82rem; color: #444;
     }
     .price-includes li { padding: 0.25rem 0; }
     .price-includes li::before { content: '✓  '; color: var(--gold-lt); }
     .price-note {
       margin-top: 2.5rem; font-size: 0.8rem;
-      color: rgba(255,255,255,0.5); max-width: 55ch; margin-left: auto; margin-right: auto;
+      color: #888; max-width: 55ch; margin-left: auto; margin-right: auto;
     }
 
     /* ─── CONTACT ───────────────────────────────────── */
@@ -636,6 +636,8 @@
       <div class="hero-slide"        style="background-image:url('IMG_4649.jpg')"></div>
       <div class="hero-slide"        style="background-image:url('P4140630~2.JPG')"></div>
       <div class="hero-slide"        style="background-image:url('IMG_2372.jpg')"></div>
+      <div class="hero-slide"        style="background-image:url('IMG_7522.jpg')"></div>
+      <div class="hero-slide"        style="background-image:url('IMG_7515.jpg')"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -724,12 +726,12 @@
   </section>
 
   <!-- ══ HET UITZICHT ═════════════════════════════════════ -->
-  <section id="uitzicht" style="background:var(--dark); padding:5rem 4%; color:#fff;">
+  <section id="uitzicht" style="background:#f0ebe0; padding:5rem 4%; color:#231408;">
     <div class="text-center reveal" style="margin-bottom:3rem;">
-      <span class="section-eyebrow" style="color:var(--gold-lt);" data-i18n="view_eyebrow">Op 600 meter hoogte</span>
-      <h2 style="color:#fff;" data-i18n="view_h2">Het uitzicht — altijd spectaculair</h2>
-      <div class="divider center" style="background:var(--gold-lt);"></div>
-      <p style="color:rgba(255,255,255,0.75); margin:0 auto; max-width:60ch;" data-i18n="view_p">
+      <span class="section-eyebrow" data-i18n="view_eyebrow">Op 600 meter hoogte</span>
+      <h2 data-i18n="view_h2">Het uitzicht — altijd spectaculair</h2>
+      <div class="divider center"></div>
+      <p style="color:#555; margin:0 auto; max-width:60ch;" data-i18n="view_p">
         Of de lucht strak blauw is, er dramatische wolken samenpakken of de zon opkomt achter de Sierra de Bèrnia in een vuurzee van oranje en rood — het uitzicht vanuit Finca Bèrnia is altijd de moeite waard. De zee is er altijd, en op heldere dagen ziet u zelfs Ibiza.
       </p>
     </div>
@@ -1040,6 +1042,12 @@
       <p class="hiking-desc" data-i18n="hike_p2">
         Het pad slingert door wilde rozemarijn, tijm en eeuwenoude amandelboomgaarden. Onderweg passeert u neolithische rotstekeningen — een stille herinnering aan de allereerste bewoners van dit dal — en een natuurlijke bronwaterplaats om uw biddon bij te vullen. Het hoogtepunt is het befaamde rotskanaal El Forat: een tunnel die dwars door de bergkam loopt en u aan de overkant beloont met een spectaculair uitzicht. Dit is wandelen op zijn allerbest — en Finca Bèrnia zet u precies op de goede plek.
       </p>
+
+      <!-- Natuur fotogrid -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:2rem 0; border-radius:4px; overflow:hidden;">
+        <img src="IMG_7531.jpg" alt="Panoramisch uitzicht Sierra de Bèrnia" style="width:100%; height:220px; object-fit:cover; display:block; border-radius:4px;">
+        <img src="IMG_7522.jpg" alt="Finca Bèrnia bij gouden uur" style="width:100%; height:220px; object-fit:cover; display:block; border-radius:4px;">
+      </div>
       <!-- Fietsen -->
       <div style="margin-top:2.5rem; border-top:1px solid rgba(255,255,255,0.2); padding-top:2rem;">
         <span class="section-eyebrow" style="color:rgba(255,255,255,0.65);" data-i18n="cycle_eyebrow">Wielrennen</span>
@@ -1065,9 +1073,9 @@
         <p style="color:#555;" data-i18n="loc_p1">Finca Bèrnia ligt in de uitlopers van de Sierra de Bèrnia, op een korte rit van het charmante wijndorp Jalón (Xaló) — bekend om zijn weekmarkt, lokale bodegas en traditionele tapasbarretjes. Het uitzicht vanuit de woning strekt zich uit richting Moraira en Benissa, met altijd de zee in het verschiet. Op heldere dagen is zelfs Ibiza zichtbaar.</p>
         <p style="color:#555;" data-i18n="loc_p2">U bent dicht genoeg bij de zee voor een dagje strand, maar hoog genoeg in de bergen voor koele avonden, schone lucht en absolute stilte.</p>
         <ul class="nearby-list">
-          <li><span>Jalón dorpscentrum</span>             <span class="dist">15 min 🚗</span></li>
+          <li><span>Jalón dorpscentrum</span>             <span class="dist">20 min 🚗</span></li>
           <li><span>Benissa</span>                        <span class="dist">20 min 🚗</span></li>
-          <li><span>Moraira</span>                        <span class="dist">40 min 🚗</span></li>
+          <li><span>Moraira</span>                        <span class="dist">30 min 🚗</span></li>
           <li><span>Calpe</span>                          <span class="dist">30 min 🚗</span></li>
           <li><span>Mediterrane stranden</span>           <span class="dist">30 min 🚗</span></li>
           <li><span>Dénia</span>                          <span class="dist">50 min 🚗</span></li>
@@ -1110,7 +1118,7 @@
         <div class="cal-legend-item"><div class="cal-dot available"></div> <span data-i18n="cal_avail">Beschikbaar</span></div>
         <div class="cal-legend-item"><div class="cal-dot booked"></div> <span data-i18n="cal_booked">Geboekt / niet beschikbaar</span></div>
         <div class="cal-legend-item"><div class="cal-dot option"></div> <span data-i18n="cal_option">Onder optie</span></div>
-        <div class="cal-legend-item"><div class="cal-dot past"></div> <span data-i18n="cal_past">Verleden datum</span></div>
+        <div class="cal-legend-item"><div class="cal-dot past"></div> <span data-i18n="cal_past">Verleden</span></div>
       </div>
       <div class="cal-nav reveal">
         <button class="cal-nav-btn" id="calPrev" onclick="calNavigate(-1)">&#8592; <span data-i18n="cal_prev">Vorige</span></button>
@@ -1130,7 +1138,7 @@
       <div class="text-center reveal" style="margin-bottom:2.5rem;">
         <span class="section-eyebrow" data-i18n="pricing_eyebrow">Transparante prijzen</span>
         <h2 data-i18n="pricing_h2">Tarieven</h2>
-        <div class="divider center" style="background:var(--gold-lt);"></div>
+        <div class="divider center"></div>
       </div>
       <div class="price-cards reveal">
         <div class="price-card">
@@ -1199,7 +1207,7 @@
           <span class="contact-detail-icon">🌐</span>
           <div>
             <strong>Talen</strong><br />
-            <span data-i18n="contact_lang">Nederlands · Engels · Spaans</span>
+            <span data-i18n="contact_lang">Nederlands · Engels · Duits · Spaans</span>
           </div>
         </div>
         <a href="https://wa.me/31681047290?text=Hallo%2C%20ik%20ben%20ge%C3%AFnteresseerd%20in%20het%20huren%20van%20Finca%20B%C3%A8rnia." class="btn-whatsapp" target="_blank" rel="noopener">
@@ -1301,7 +1309,7 @@
   ];
 
   // Hoeveel maanden weergeven in de kalender
-  const MONTHS_TO_SHOW = 4;
+  const MONTHS_TO_SHOW = 6;
 
   // ─── Hero diashow ───────────────────────────────────
   const slides   = document.querySelectorAll('.hero-slide');
@@ -1452,7 +1460,7 @@
       loc_p2: 'U bent dicht genoeg bij de zee voor een dagje strand, maar hoog genoeg in de bergen voor koele avonden, schone lucht en absolute stilte.',
       cal_eyebrow: 'Plan uw verblijf', cal_h2: 'Beschikbaarheidskalender',
       cal_intro: 'Controleer welke weken vrij zijn en neem contact op om uw data te reserveren. De rode datums zijn al geboekt.',
-      cal_avail: 'Beschikbaar', cal_booked: 'Geboekt / niet beschikbaar', cal_option: 'Onder optie', cal_past: 'Verleden datum',
+      cal_avail: 'Beschikbaar', cal_booked: 'Geboekt / niet beschikbaar', cal_option: 'Onder optie', cal_past: 'Verleden',
       cal_note: 'Neem contact op via het formulier hieronder of stuur een WhatsApp-bericht om uw data te reserveren. Wij reageren doorgaans binnen 24 uur. Minimale verblijfsduur: 1 week (bij voorkeur zaterdag tot zaterdag).',
       pricing_eyebrow: 'Transparante prijzen', pricing_h2: 'Tarieven',
       season_low: 'Laagseizoen', season_low_info: 'November – maart (excl. kerst/oud & nieuw)',
@@ -1462,7 +1470,7 @@
       pricing_note: 'Prijzen zijn voor de gehele woning (maximaal 8 personen). Geen verborgen kosten. Een aanbetaling van 25% is vereist om uw boeking te bevestigen; het resterende bedrag is verschuldigd 4 weken voor aankomst. Annuleringsbeleid op aanvraag beschikbaar.',
       contact_eyebrow: 'Neem contact op', contact_h2: 'Reserveer uw verblijf',
       contact_p: 'Wij verwelkomen u graag bij Finca Bèrnia! Vul het formulier in en wij reageren binnen 24 uur om de beschikbaarheid te bevestigen en uw vragen te beantwoorden.',
-      contact_lang: 'Nederlands · Engels · Spaans', wa_btn: 'WhatsApp ons',
+      contact_lang: 'Nederlands · Engels · Duits · Spaans', wa_btn: 'WhatsApp ons',
       wa_msg: 'Hallo, ik ben geïnteresseerd in het huren van Finca Bèrnia. Info: info@fincabernia.eu',
       form_fname_lbl: 'Voornaam *', form_lname_lbl: 'Achternaam *', form_email_lbl: 'E-mailadres *',
       form_phone_lbl: 'Telefoon / WhatsApp', form_arrival_lbl: 'Aankomstdatum *', form_departure_lbl: 'Vertrekdatum *',
@@ -1553,7 +1561,7 @@
       pricing_note: 'Prices are for the entire property (maximum 8 guests). No hidden costs. A 25% deposit is required to confirm your booking; the remaining amount is due 4 weeks before arrival. Cancellation policy available on request.',
       contact_eyebrow: 'Contact us', contact_h2: 'Reserve your stay',
       contact_p: 'We warmly welcome you to Finca Bèrnia! Fill in the form and we will respond within 24 hours to confirm availability and answer your questions.',
-      contact_lang: 'Dutch · English · Spanish', wa_btn: 'WhatsApp us',
+      contact_lang: 'Dutch · English · German · Spanish', wa_btn: 'WhatsApp us',
       wa_msg: 'Hello, I am interested in renting Finca Bèrnia.',
       form_fname_lbl: 'First name *', form_lname_lbl: 'Last name *', form_email_lbl: 'Email address *',
       form_phone_lbl: 'Phone / WhatsApp', form_arrival_lbl: 'Arrival date *', form_departure_lbl: 'Departure date *',
@@ -1644,7 +1652,7 @@
       pricing_note: 'Preise gelten für das gesamte Ferienhaus (max. 8 Personen). Keine versteckten Kosten. Eine Anzahlung von 25 % bestätigt Ihre Buchung; der Restbetrag ist 4 Wochen vor Anreise fällig. Stornierungsbedingungen auf Anfrage.',
       contact_eyebrow: 'Kontakt', contact_h2: 'Reservieren Sie Ihren Aufenthalt',
       contact_p: 'Wir heißen Sie herzlich in der Finca Bèrnia willkommen! Füllen Sie das Formular aus und wir antworten innerhalb von 24 Stunden.',
-      contact_lang: 'Niederländisch · Englisch · Spanisch', wa_btn: 'WhatsApp-Nachricht senden',
+      contact_lang: 'Niederländisch · Englisch · Deutsch · Spanisch', wa_btn: 'WhatsApp-Nachricht senden',
       wa_msg: 'Hallo, ich interessiere mich für die Miete der Finca Bèrnia.',
       form_fname_lbl: 'Vorname *', form_lname_lbl: 'Nachname *', form_email_lbl: 'E-Mail-Adresse *',
       form_phone_lbl: 'Telefon / WhatsApp', form_arrival_lbl: 'Anreisedatum *', form_departure_lbl: 'Abreisedatum *',
@@ -1735,7 +1743,7 @@
       pricing_note: 'Prix pour la maison entière (maximum 8 personnes). Aucun frais caché. Un acompte de 25 % est requis pour confirmer la réservation ; le solde est dû 4 semaines avant l\'arrivée. Politique d\'annulation disponible sur demande.',
       contact_eyebrow: 'Contactez-nous', contact_h2: 'Réservez votre séjour',
       contact_p: 'Nous vous accueillons chaleureusement à Finca Bèrnia ! Remplissez le formulaire et nous vous répondrons sous 24 heures.',
-      contact_lang: 'Néerlandais · Anglais · Espagnol', wa_btn: 'Nous contacter sur WhatsApp',
+      contact_lang: 'Néerlandais · Anglais · Allemand · Espagnol', wa_btn: 'Nous contacter sur WhatsApp',
       wa_msg: 'Bonjour, je suis intéressé(e) par la location de Finca Bèrnia.',
       form_fname_lbl: 'Prénom *', form_lname_lbl: 'Nom *', form_email_lbl: 'Adresse e-mail *',
       form_phone_lbl: 'Téléphone / WhatsApp', form_arrival_lbl: 'Date d\'arrivée *', form_departure_lbl: 'Date de départ *',
@@ -1826,7 +1834,7 @@
       pricing_note: 'Precios para la casa completa (máximo 8 personas). Sin costes ocultos. Se requiere un depósito del 25 % para confirmar la reserva; el importe restante vence 4 semanas antes de la llegada. Política de cancelación disponible bajo solicitud.',
       contact_eyebrow: 'Contáctenos', contact_h2: 'Reserve su estancia',
       contact_p: 'Le damos la bienvenida a Finca Bèrnia. Rellene el formulario y le responderemos en 24 horas para confirmar la disponibilidad.',
-      contact_lang: 'Neerlandés · Inglés · Español', wa_btn: 'Escríbanos por WhatsApp',
+      contact_lang: 'Neerlandés · Inglés · Alemán · Español', wa_btn: 'Escríbanos por WhatsApp',
       wa_msg: 'Hola, estoy interesado/a en alquilar Finca Bèrnia.',
       form_fname_lbl: 'Nombre *', form_lname_lbl: 'Apellido *', form_email_lbl: 'Correo electrónico *',
       form_phone_lbl: 'Teléfono / WhatsApp', form_arrival_lbl: 'Fecha de llegada *', form_departure_lbl: 'Fecha de salida *',
