@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finca Bèrnia – Authentieke Stenen Villa · Sierra de Bèrnia, Spanje</title>
-  <meta name="description" content="Huur een authentieke stenen villa aan de voet van de Sierra de Bèrnia. 4 slaapkamers voor max. 8 personen, adembenemend uitzicht op zee én bergen, privé-ingang en parkeerplaats. Vanaf €500 per week." />
+  <meta name="description" content="Huur een authentieke stenen villa aan de voet van de Sierra de Bèrnia. 4 slaapkamers voor max. 8 personen, adembenemend uitzicht op zee en bergen, prive-ingang en parkeerplaats. Vanaf €500 per week." />
 
   <!-- ═══════════════════════════════════════════════
        HOE BEZETTE DATUMS BIJWERKEN
@@ -558,6 +558,25 @@
     .lang-opt-mob { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.3); color:rgba(255,255,255,0.7); padding:0.4rem 1rem; cursor:pointer; font-family:'Jost',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; border-radius:2px; transition:all 0.2s; }
     .lang-opt-mob.active { background:var(--gold); color:#fff; border-color:var(--gold); }
     .lang-switcher-mob { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-top:1rem; }
+
+    /* ─── CALENDAR NAVIGATION ───────────────────────────── */
+    .cal-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+    .cal-nav-btn {
+      background: var(--dark); color: #fff; border: none;
+      padding: 0.45rem 1rem; border-radius: 2px; cursor: pointer;
+      font-family: 'Jost', sans-serif; font-size: 0.8rem;
+      letter-spacing: 0.08em; transition: background 0.2s;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .cal-nav-btn:hover { background: var(--gold); }
+    .cal-nav-btn:disabled { opacity: 0.35; cursor: default; background: var(--dark); }
+    .cal-nav-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; color: #555; letter-spacing: 0.04em;
+    }
   </style>
 </head>
 <body>
@@ -622,7 +641,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow" data-i18n="hero_eyebrow">Sierra de Bèrnia · Costa Blanca · Spanje</p>
       <h1 data-i18n="site_name">Finca Bèrnia</h1>
-      <p data-i18n="hero_subtitle">Een authentieke stenen villa met panoramisch uitzicht op zee én bergen — uw eigen paradijs in het hart van de Bèrnia natuurreservaat</p>
+      <p data-i18n="hero_subtitle">Een authentieke stenen villa met panoramisch uitzicht op zee en bergen — uw eigen paradijs in het hart van de Sierra de Bèrnia.</p>
       <a href="#availability" class="btn-hero" data-i18n="hero_cta">Bekijk beschikbaarheid</a>
     </div>
     <div class="hero-dots" id="heroDots"></div>
@@ -672,10 +691,10 @@
       </div>
       <div class="about-text reveal">
         <span class="section-eyebrow" data-i18n="about_eyebrow">Over de woning</span>
-        <h2 data-i18n="about_h2">Uw privé-retraite in de bergen</h2>
+        <h2 data-i18n="about_h2">Uw prive-retraite in de bergen</h2>
         <div class="divider"></div>
         <p data-i18n-html="about_p1">Genesteld aan de voet van de Sierra de Bèrnia staat Finca Bèrnia: een prachtig gerestaureerde traditionele stenen finca op een hoogte van 600 meter, met een onbelemmerd panoramisch uitzicht in de richting van Moraira en Benissa. Of het nu strak blauw is, er wolken hangen of de zon ondergaat achter de bergen — het uitzicht is altijd spectaculair. En altijd is de zee te zien. Op heldere dagen is zelfs Ibiza zichtbaar aan de horizon.</p>
-        <p data-i18n-html="about_p2">Het te huren gedeelte betreft de volledige bovenverdieping van de villa. Dit is een <strong>volledig zelfstandige woonunit</strong> met een eigen privé-ingang, privé-parkeerplaats en alles wat u nodig heeft voor een onvergetelijk verblijf. Er is ruimte voor maximaal 8 personen verdeeld over 4 ruime slaapkamers, elk met een tweepersoonsbed.</p>
+        <p data-i18n-html="about_p2">Het te huren gedeelte betreft de volledige bovenverdieping van de villa. Dit is een <strong>volledig zelfstandige woonunit</strong> met een eigen prive-ingang, prive-parkeerplaats en alles wat u nodig heeft voor een onvergetelijk verblijf. Er is ruimte voor maximaal 8 personen verdeeld over 4 ruime slaapkamers, elk met een tweepersoonsbed.</p>
         <p data-i18n="about_p3">De ruime woonkamer en de grote eetkamer hebben elk een adembenemend uitzicht op zowel de zee als de imposante bergkam van de Sierra de Bèrnia. De eigenaren bewonen de begane grond en zijn altijd in de buurt voor lokale tips of hulp.</p>
         <div class="about-badge">
           <span>📍</span>
@@ -694,12 +713,12 @@
       <div class="highlight">
         <span class="hl-icon">🍽️</span>
         <h3 data-i18n="hl2_h3">Grote eetkamer</h3>
-        <p data-i18n="hl2_p">Een ruime eetkamer met uitzicht op zee en bergen — ideaal voor gezamenlijke maaltijden met het hele gezelschap. Plek zat voor 8 personen aan tafel.</p>
+        <p data-i18n="hl2_p">Een ruime eetkamer met uitzicht op zee en bergen — ideaal voor gezamenlijke maaltijden met het hele gezelschap. Ruime zitplaatsen voor 8 personen aan de eettafel.</p>
       </div>
       <div class="highlight">
         <span class="hl-icon">🔑</span>
         <h3 data-i18n="hl3_h3">Volledig zelfstandig</h3>
-        <p data-i18n="hl3_p">Eigen privé-opgang, eigen parkeerplaats voor de deur, en totale privacy. U bent volstrekt onafhankelijk van de eigenaren op de begane grond.</p>
+        <p data-i18n="hl3_p">Eigen terreintoegang en prive-ingang, afgesloten parkeerruimte pal voor de deur en absolute privacy — volledig zelfstandig verblijven terwijl de eigenaren in hun woning op de begane grond wonen en voor vragen beschikbaar zijn.</p>
       </div>
     </div>
   </section>
@@ -711,13 +730,13 @@
       <h2 style="color:#fff;" data-i18n="view_h2">Het uitzicht — altijd spectaculair</h2>
       <div class="divider center" style="background:var(--gold-lt);"></div>
       <p style="color:rgba(255,255,255,0.75); margin:0 auto; max-width:60ch;" data-i18n="view_p">
-        Of de lucht strak blauw is, er dramatische wolken samenpakken of de zon opkomt achter de Sierra de Bèrnia in een vuurzee van oranje en rood — het uitzicht vanuit Finca Bèrnia is altijd de moeite waard. De zee is er altijd. En op heldere dagen ziet u Ibiza.
+        Of de lucht strak blauw is, er dramatische wolken samenpakken of de zon opkomt achter de Sierra de Bèrnia in een vuurzee van oranje en rood — het uitzicht vanuit Finca Bèrnia is altijd de moeite waard. De zee is er altijd, en op heldere dagen ziet u zelfs Ibiza.
       </p>
     </div>
 
     <!-- Groot panorama -->
     <div class="reveal" style="max-width:1300px; margin:0 auto 0.6rem; overflow:hidden; border-radius:3px; cursor:pointer;" onclick="openViewLb(0)">
-      <img src="IMG_2374.jpg" alt="Panoramisch uitzicht bij zonsopkomst vanuit Casa Bèrnia"
+      <img src="IMG_2374.jpg" alt="Panoramisch uitzicht bij zonsopkomst vanuit Finca Bèrnia"
            style="width:100%; max-height:420px; object-fit:cover; display:block; transition:transform 0.5s;"
            onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" />
     </div>
@@ -858,14 +877,14 @@
           <div class="amenity-icon">🚿</div>
           <div>
             <div class="amenity-name" data-i18n="amen_name_5">3 Badkamers</div>
-            <div class="amenity-desc" data-i18n="amen_desc_5">Waaronder één met bijzondere blauwe mozaïektegels, bad en douche</div>
+            <div class="amenity-desc" data-i18n="amen_desc_5">Waaronder een met bijzondere blauwe mozaïektegels, bad en douche</div>
           </div>
         </div>
         <div class="amenity">
           <div class="amenity-icon">🅿️</div>
           <div>
             <div class="amenity-name" data-i18n="amen_name_6">Privé-parkeerplaats</div>
-            <div class="amenity-desc" data-i18n="amen_desc_6">Eigen parkeerplek bij de privé-ingang</div>
+            <div class="amenity-desc" data-i18n="amen_desc_6">Eigen parkeerplek bij de prive-ingang</div>
           </div>
         </div>
         <div class="amenity">
@@ -943,26 +962,26 @@
         <div style="background:#fff; border:1px solid #e0dbd4; border-radius:4px; padding:2rem; border-top:3px solid var(--gold);">
           <div style="font-size:2rem; margin-bottom:0.8rem;">🧹</div>
           <h3 style="font-size:1.4rem; margin-bottom:0.8rem;" data-i18n="svc1_h3">Schoonmaakservice</h3>
-          <p style="color:#555; font-size:0.88rem; margin-bottom:1rem;">
+          <p style="color:#555; font-size:0.88rem; margin-bottom:1rem;" data-i18n="svc1_desc">
             Wij kunnen voor u een professionele schoonmaakster inschakelen die de woning tijdens uw verblijf bijhoudt — zodat u zich geen moment zorgen hoeft te maken en optimaal kunt genieten van uw vakantie.
           </p>
           <ul style="list-style:none; font-size:0.83rem; color:#666;">
-            <li style="padding:0.3rem 0; border-bottom:1px solid #f0ece6;">✓ &nbsp;Tussentijdse schoonmaak (op afspraak)</li>
-            <li style="padding:0.3rem 0; border-bottom:1px solid #f0ece6;">✓ &nbsp;Vers beddengoed &amp; handdoeken wisselen</li>
-            <li style="padding:0.3rem 0;">✓ &nbsp;Eindschoonmaak standaard inbegrepen</li>
+            <li style="padding:0.3rem 0; border-bottom:1px solid #f0ece6;">✓ &nbsp;<span data-i18n="svc1_b1">Tussentijdse schoonmaak (op afspraak)</span></li>
+            <li style="padding:0.3rem 0; border-bottom:1px solid #f0ece6;">✓ &nbsp;<span data-i18n="svc1_b2">Verschonen beddengoed &amp; handdoeken</span></li>
+            <li style="padding:0.3rem 0;">✓ &nbsp;<span data-i18n="svc1_b3">Eindschoonmaak standaard inbegrepen</span></li>
           </ul>
-          <p style="margin-top:1.2rem; font-size:0.8rem; color:#999;">Prijs op aanvraag · Reserveer bij boeking</p>
+          <p style="margin-top:1.2rem; font-size:0.8rem; color:#999;" data-i18n="svc1_note">Prijs op aanvraag · Reserveer bij boeking</p>
         </div>
 
         <!-- Kokkin -->
         <div style="background:#fff; border:1px solid #e0dbd4; border-radius:4px; padding:2rem; border-top:3px solid var(--gold);">
           <div style="font-size:2rem; margin-bottom:0.8rem;">👩‍🍳</div>
-          <h3 style="font-size:1.4rem; margin-bottom:0.8rem;" data-i18n="svc2_h3">Privé-kokkin</h3>
-          <p style="color:#555; font-size:0.88rem; margin-bottom:1rem;">
-            Wij kunnen een lokale Spaanse kokkin voor u regelen die bij u thuis — in de woning — traditionele gerechten bereidt. Een unieke culinaire ervaring die u meeneemt naar het hart van de Valenciaanse keuken.
+          <h3 style="font-size:1.4rem; margin-bottom:0.8rem;" data-i18n="svc2_h3">Prive-kokkin</h3>
+          <p style="color:#555; font-size:0.88rem; margin-bottom:1rem;" data-i18n="svc2_desc">
+            Wij kunnen een lokale Spaanse kokkin voor u regelen die traditionele gerechten bereidt. Een unieke culinaire ervaring die u meeneemt naar het hart van de Valenciaanse keuken.
           </p>
           <div style="font-size:0.83rem; color:#666; line-height:1.9;">
-            <strong style="color:#555; display:block; margin-bottom:0.4rem;">Specialiteiten:</strong>
+            <strong style="color:#555; display:block; margin-bottom:0.4rem;" data-i18n="svc2_spec">Specialiteiten:</strong>
             <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
               <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">🥘 Paella valenciana</span>
               <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">🍝 Fideuà</span>
@@ -972,12 +991,12 @@
               <span style="background:var(--stone); padding:0.2rem 0.7rem; border-radius:20px;">& meer...</span>
             </div>
           </div>
-          <p style="margin-top:1.2rem; font-size:0.8rem; color:#999;">Prijs op aanvraag · Reserveer bij boeking · Boodschappen niet inbegrepen</p>
+          <p style="margin-top:1.2rem; font-size:0.8rem; color:#999;" data-i18n="svc2_note">Prijs op aanvraag · Reserveer bij boeking · Boodschappen niet inbegrepen</p>
         </div>
 
       </div>
-      <p class="cal-note reveal" style="max-width:700px; margin:2rem auto 0;">
-        Heeft u interesse in één van deze services? Vermeld dit in uw boekingsaanvraag of neem contact op via WhatsApp, dan regelen wij alles voor u.
+      <p class="cal-note reveal" style="max-width:700px; margin:2rem auto 0;" data-i18n="svc_cta">
+        Heeft u interesse in een van deze services? Vermeld dit in uw boekingsaanvraag of neem contact op via WhatsApp, dan regelen wij alles voor u.
       </p>
     </div>
   </section>
@@ -997,12 +1016,12 @@
       <div class="hiking-lp">
         <span>📖</span> <span data-i18n-html="hike_lp">Aanbevolen in <strong>Lonely Planet</strong> — Serra de Bèrnia Loop Walk</span>
       </div>
-      <p class="hiking-desc">
-        Eén van de mooiste wandelingen van de Costa Blanca begint vrijwel bij uw voordeur. De Serra de Bèrnia Loop is door Lonely Planet geprezen vanwege de dramatische kalkstenen bergkammen, het weidsheid panorama richting Moraira en Benissa en het iconische Fort Bèrnia — een 16e-eeuwse Spaanse vesting hoog boven de Middellandse Zee.
+      <p class="hiking-desc" data-i18n="hike_p1">
+        Een van de mooiste wandelingen van de Costa Blanca begint vrijwel bij uw voordeur. De Serra de Bèrnia Loop is door Lonely Planet geprezen vanwege de dramatische kalkstenen bergkammen, het weidsheid panorama richting Moraira en Benissa en het iconische Fort Bèrnia — een 16e-eeuwse Spaanse vesting hoog boven de Middellandse Zee.
       </p>
       <div class="hiking-stats">
         <div class="hiking-stat">
-          <span class="hiking-stat-value">~13 km</span>
+          <span class="hiking-stat-value">~10 km</span>
           <span class="hiking-stat-label" data-i18n="hike_stat1">Afstand</span>
         </div>
         <div class="hiking-stat">
@@ -1010,7 +1029,7 @@
           <span class="hiking-stat-label" data-i18n="hike_stat2">Hoogteverschil</span>
         </div>
         <div class="hiking-stat">
-          <span class="hiking-stat-value">4–5 uur</span>
+          <span class="hiking-stat-value">3,5–4 h</span>
           <span class="hiking-stat-label" data-i18n="hike_stat3">Duur</span>
         </div>
         <div class="hiking-stat">
@@ -1018,10 +1037,21 @@
           <span class="hiking-stat-label" data-i18n="hike_stat4">Moeilijkheidsgraad</span>
         </div>
       </div>
-      <p class="hiking-desc">
-        Het pad slingert door wilde rozemarijn, tijm en eeuwenoude amandelboomgaarden voordat het omhoog klimt naar de bergkam en het befaamde rotskanaal (el forat) dat dwars door de berg loopt. Op een heldere dag ziet u Ibiza aan de horizon. Op heldere dagen is zelfs Ibiza zichtbaar. Dit is wandelen op zijn allerbest — en Casa Bèrnia zet u precies op de goede plek.
+      <p class="hiking-desc" data-i18n="hike_p2">
+        Het pad slingert door wilde rozemarijn, tijm en eeuwenoude amandelboomgaarden. Onderweg passeert u neolithische rotstekeningen — een stille herinnering aan de allereerste bewoners van dit dal — en een natuurlijke bronwaterplaats om uw biddon bij te vullen. Het hoogtepunt is het befaamde rotskanaal El Forat: een tunnel die dwars door de bergkam loopt en u aan de overkant beloont met een spectaculair uitzicht. Dit is wandelen op zijn allerbest — en Finca Bèrnia zet u precies op de goede plek.
       </p>
-      <a href="https://www.lonelyplanet.com" target="_blank" rel="noopener" class="btn-outline-white" data-i18n="hike_btn">Meer lezen op Lonely Planet ↗</a>
+      <!-- Fietsen -->
+      <div style="margin-top:2.5rem; border-top:1px solid rgba(255,255,255,0.2); padding-top:2rem;">
+        <span class="section-eyebrow" style="color:rgba(255,255,255,0.65);" data-i18n="cycle_eyebrow">Wielrennen</span>
+        <h2 style="margin-top:0.5rem;" data-i18n="cycle_h2">Wielrennen in de Costa Blanca</h2>
+        <div class="divider center"></div>
+        <div class="hiking-lp">
+          <span>🚴</span> <span data-i18n="cycle_badge">Trainingsgebied van professionele wielerploegen</span>
+        </div>
+        <p class="hiking-desc" data-i18n="cycle_p">
+          De wegen rond de Sierra de Bèrnia en het Jalón-dal staan bekend als trainingsgebied van professionele wielerploegen — teams als INEOS Grenadiers, UAE Team Emirates en Jumbo-Visma kiezen de regio bewust als wintertrainingsbasis. Schone lucht, nauwelijks verkeer en klimmen die uw benen echte tests bezorgen. Voor de recreatieve fietser zijn er routes voor elk niveau, van rustige dalwegen tot uitdagende bergpassen met panoramisch zeezicht.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -1032,8 +1062,8 @@
         <span class="section-eyebrow" data-i18n="loc_eyebrow">Ligging</span>
         <h2 data-i18n="loc_h2">Uitstekend gelegen</h2>
         <div class="divider"></div>
-        <p style="color:#555;">Casa Bèrnia ligt in de uitlopers van de Sierra de Bèrnia, op een korte rit van het charmante wijndorp Jalón (Xaló) — bekend om zijn weekmarkt, lokale bodegas en traditionele tapasbarretjes. Het uitzicht vanuit de woning strekt zich uit richting Moraira en Benissa, met altijd de zee in het verschiet. Op heldere dagen is zelfs Ibiza zichtbaar.</p>
-        <p style="color:#555;">U bent dicht genoeg bij de zee voor een dagje strand, maar hoog genoeg in de bergen voor koele avonden, schone lucht en absolute stilte.</p>
+        <p style="color:#555;" data-i18n="loc_p1">Finca Bèrnia ligt in de uitlopers van de Sierra de Bèrnia, op een korte rit van het charmante wijndorp Jalón (Xaló) — bekend om zijn weekmarkt, lokale bodegas en traditionele tapasbarretjes. Het uitzicht vanuit de woning strekt zich uit richting Moraira en Benissa, met altijd de zee in het verschiet. Op heldere dagen is zelfs Ibiza zichtbaar.</p>
+        <p style="color:#555;" data-i18n="loc_p2">U bent dicht genoeg bij de zee voor een dagje strand, maar hoog genoeg in de bergen voor koele avonden, schone lucht en absolute stilte.</p>
         <ul class="nearby-list">
           <li><span>Jalón dorpscentrum</span>             <span class="dist">15 min 🚗</span></li>
           <li><span>Benissa</span>                        <span class="dist">20 min 🚗</span></li>
@@ -1043,16 +1073,10 @@
           <li><span>Dénia</span>                          <span class="dist">50 min 🚗</span></li>
           <li><span>Vliegveld Alicante (ALC)</span>       <span class="dist">1u15 🚗</span></li>
           <li><span>Vliegveld Valencia (VLC)</span>       <span class="dist">1u30 🚗</span></li>
-          <li><span>Vliegveld Castellón (CDT)</span>      <span class="dist">1u15 🚗</span></li>
+          <li><span>Vliegveld Castellón (CDT)</span>      <span class="dist">2u30 🚗</span></li>
           <li><span>Start Bèrnia Loop</span>              <span class="dist">Direct 🥾</span></li>
         </ul>
-        <div class="about-badge" style="margin-top:1.5rem;">
-          <span>✈️</span>
-          <div style="font-size:0.82rem; line-height:1.6;">
-            <strong>Vluchttijden:</strong> Alicante ca. 2u30 · Valencia ca. 2u15 · Castellón ca. 2u15<br />
-            <strong>Tip autohuur:</strong> Wij adviseren te huren via <a href="https://www.doyouspain.com" target="_blank" rel="noopener" style="color:var(--gold);">doyouspain.com</a> — scherpe prijzen en betrouwbare service. Castellón heeft in de zomer vaak lage vluchttarieven, maar auto's zijn daar duurder; Alicante biedt doorgaans de beste combinatie.
-          </div>
-        </div>
+
         <div class="about-badge" style="margin-top:1rem;">
           <span>🍽️</span>
           <div style="font-size:0.82rem; line-height:1.6;">
@@ -1066,7 +1090,7 @@
           class="map-embed"
           src="https://maps.google.com/maps?q=38.674056,-0.039722&z=15&output=embed"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Kaart – Casa Bèrnia, Sierra de Bèrnia">
+          title="Kaart – Finca Bèrnia, Sierra de Bèrnia">
         </iframe>
         <p style="font-size:0.75rem; color:#999; margin-top:0.5rem;">📍 Sierra de Bèrnia, Jalón/Xaló · <a href="https://maps.google.com/?q=38.674056,-0.039722" target="_blank" rel="noopener" style="color:var(--gold);">Open in Google Maps ↗</a></p>
       </div>
@@ -1087,6 +1111,11 @@
         <div class="cal-legend-item"><div class="cal-dot booked"></div> <span data-i18n="cal_booked">Geboekt / niet beschikbaar</span></div>
         <div class="cal-legend-item"><div class="cal-dot option"></div> <span data-i18n="cal_option">Onder optie</span></div>
         <div class="cal-legend-item"><div class="cal-dot past"></div> <span data-i18n="cal_past">Verleden datum</span></div>
+      </div>
+      <div class="cal-nav reveal">
+        <button class="cal-nav-btn" id="calPrev" onclick="calNavigate(-1)">&#8592; <span data-i18n="cal_prev">Vorige</span></button>
+        <span class="cal-nav-label" id="calNavLabel"></span>
+        <button class="cal-nav-btn" id="calNext" onclick="calNavigate(1)"><span data-i18n="cal_next">Volgende</span> &#8594;</button>
       </div>
       <div class="calendars-wrap reveal" id="calendarsWrap"></div>
       <p class="cal-note reveal">
@@ -1245,7 +1274,7 @@
       <a href="#pricing" data-i18n="nav_pricing">Tarieven</a>
       <a href="#contact" data-i18n="foot_contact">Contact</a>
     </div>
-    <p style="margin-top:1rem;">&copy; <span id="footYear"></span> Casa Bèrnia. Alle rechten voorbehouden.</p>
+    <p style="margin-top:1rem;">&copy; <span id="footYear"></span> Finca Bèrnia. Alle rechten voorbehouden.</p>
   </footer>
 
 
@@ -1352,6 +1381,7 @@
   // ─── Beschikbaarheidskalender ───────────────────────
   // ─── Multi-language ─────────────────────────────────
   let currentLang = 'nl';
+  let calOffset = 0; // maanden offset voor kalendernavigatie
 
   const TRANSLATIONS = {
     nl: {
@@ -1361,33 +1391,33 @@
       nav_services: 'Services', nav_hiking: 'Wandelen', nav_avail: 'Beschikbaarheid',
       nav_pricing: 'Tarieven', nav_book: 'Boek nu',
       hero_eyebrow: 'Sierra de Bèrnia · Costa Blanca · Spanje',
-      hero_subtitle: 'Een authentieke stenen villa met panoramisch uitzicht op zee én bergen — uw eigen paradijs in het hart van de Bèrnia natuurreservaat',
+      hero_subtitle: 'Een authentieke stenen villa met panoramisch uitzicht op zee en bergen — uw eigen paradijs in het hart van de Sierra de Bèrnia.',
       hero_cta: 'Bekijk beschikbaarheid',
       facts_bed: 'Slaapkamers', facts_bath: 'Badkamers', facts_guests: 'Max. gasten',
       facts_view_lbl: 'Uitzicht', facts_view_val: 'Zee & Bergen',
       facts_ent_lbl: 'Ingang', facts_ent_val: 'Privé',
       facts_price_lbl: 'Vanaf', facts_price_val: 'v.a. €500 / week',
       about_eyebrow: 'Over de woning',
-      about_h2: 'Uw privé-retraite in de bergen',
+      about_h2: 'Uw prive-retraite in de bergen',
       about_p1: 'Genesteld aan de voet van de Sierra de Bèrnia staat Finca Bèrnia: een prachtig gerestaureerde traditionele stenen finca op een hoogte van 600 meter, met een onbelemmerd panoramisch uitzicht in de richting van Moraira en Benissa. Of het nu strak blauw is, er wolken hangen of de zon ondergaat achter de bergen — het uitzicht is altijd spectaculair. En altijd is de zee te zien. Op heldere dagen is zelfs Ibiza zichtbaar aan de horizon.',
-      about_p2: 'Het te huren gedeelte betreft de volledige bovenverdieping van de villa. Dit is een <strong>volledig zelfstandige woonunit</strong> met een eigen privé-ingang, privé-parkeerplaats en alles wat u nodig heeft voor een onvergetelijk verblijf. Er is ruimte voor maximaal 8 personen verdeeld over 4 ruime slaapkamers, elk met een tweepersoonsbed.',
+      about_p2: 'Het te huren gedeelte betreft de volledige bovenverdieping van de villa. Dit is een <strong>volledig zelfstandige woonunit</strong> met een eigen prive-ingang, prive-parkeerplaats en alles wat u nodig heeft voor een onvergetelijk verblijf. Er is ruimte voor maximaal 8 personen verdeeld over 4 ruime slaapkamers, elk met een tweepersoonsbed.',
       about_p3: 'De ruime woonkamer en de grote eetkamer hebben elk een adembenemend uitzicht op zowel de zee als de imposante bergkam van de Sierra de Bèrnia. De eigenaren bewonen de begane grond en zijn altijd in de buurt voor lokale tips of hulp.',
       about_badge: 'Nabij <strong>Jalón / Xaló</strong>, Alicante — op 600 meter hoogte, altijd zee in zicht',
-      hl1_h3: 'Ruime woonkamer', hl1_p: 'Lichte, comfortabele living met panoramisch uitzicht op zee én de Sierra de Bèrnia — perfect om te ontspannen na een dag wandelen of een dagje strand.',
-      hl2_h3: 'Grote eetkamer', hl2_p: 'Een ruime eetkamer met uitzicht op zee en bergen — ideaal voor gezamenlijke maaltijden met het hele gezelschap. Plek zat voor 8 personen aan tafel.',
-      hl3_h3: 'Volledig zelfstandig', hl3_p: 'Eigen privé-opgang, eigen parkeerplaats voor de deur, en totale privacy. U bent volstrekt onafhankelijk van de eigenaren op de begane grond.',
+      hl1_h3: 'Ruime woonkamer', hl1_p: 'Lichte, comfortabele living met panoramisch uitzicht op zee en de Sierra de Bèrnia — perfect om te ontspannen na een dag wandelen of een dagje strand.',
+      hl2_h3: 'Grote eetkamer', hl2_p: 'Een ruime eetkamer met uitzicht op zee en bergen — ideaal voor gezamenlijke maaltijden met het hele gezelschap. Ruime zitplaatsen voor 8 personen aan de eettafel.',
+      hl3_h3: 'Volledig zelfstandig', hl3_p: 'Eigen terreintoegang en prive-ingang, afgesloten parkeerruimte pal voor de deur en absolute privacy — volledig zelfstandig verblijven terwijl de eigenaren in hun woning op de begane grond wonen en voor vragen beschikbaar zijn.',
       view_eyebrow: 'Op 600 meter hoogte',
       view_h2: 'Het uitzicht — altijd spectaculair',
-      view_p: 'Of de lucht strak blauw is, er dramatische wolken samenpakken of de zon opkomt achter de Sierra de Bèrnia in een vuurzee van oranje en rood — het uitzicht vanuit Finca Bèrnia is altijd de moeite waard. De zee is er altijd. En op heldere dagen ziet u Ibiza.',
+      view_p: 'Of de lucht strak blauw is, er dramatische wolken samenpakken of de zon opkomt achter de Sierra de Bèrnia in een vuurzee van oranje en rood — het uitzicht vanuit Finca Bèrnia is altijd de moeite waard. De zee is er altijd, en op heldere dagen ziet u zelfs Ibiza.',
       view_stat1_lbl: 'Hoogte boven zeespiegel', view_stat2_lbl: 'Berg & zeepanorama', view_stat3_lbl: 'Zichtbaar op heldere dagen',
       gallery_eyebrow: 'Fotogalerij', gallery_h2: 'Een kijkje binnen',
       amen_eyebrow: 'Wat is inbegrepen', amen_h2: 'Voorzieningen',
       amen_name_1: '4 Slaapkamers', amen_desc_1: 'Elk met een tweepersoonsbed — comfortabel voor maximaal 8 personen',
-      amen_name_2: 'Ruime woonkamer', amen_desc_2: 'Panoramisch uitzicht op zee én de Sierra de Bèrnia',
+      amen_name_2: 'Ruime woonkamer', amen_desc_2: 'Panoramisch uitzicht op zee en de Sierra de Bèrnia',
       amen_name_3: 'Grote eetkamer', amen_desc_3: 'Zeezicht én bergzicht, ruimte voor het hele gezelschap',
       amen_name_4: 'Volledig uitgeruste keuken', amen_desc_4: 'Alles aanwezig om heerlijk te koken',
-      amen_name_5: '3 Badkamers', amen_desc_5: 'Waaronder één met bijzondere blauwe mozaïektegels, bad en douche',
-      amen_name_6: 'Privé-parkeerplaats', amen_desc_6: 'Eigen parkeerplek bij de privé-ingang',
+      amen_name_5: '3 Badkamers', amen_desc_5: 'Waaronder een met bijzondere blauwe mozaïektegels, bad en douche',
+      amen_name_6: 'Prive-parkeerplaats', amen_desc_6: 'Eigen parkeerplek bij de prive-ingang',
       amen_name_7: 'Zelfstandige woonunit', amen_desc_7: 'Volledig eigen ingang — totale privacy',
       amen_name_8: 'Vergezichten', amen_desc_8: 'Panoramisch uitzicht op zee én bergen vanuit elke ruimte',
       amen_name_9: 'Wifi', amen_desc_9: 'Snel internet aanwezig',
@@ -1398,12 +1428,28 @@
       amen_name_14: 'Traditionele steenbouw', amen_desc_14: 'Authentiek gerestaureerde Spaanse finca',
       svc_eyebrow: 'Op aanvraag beschikbaar', svc_h2: 'Extra services',
       svc_intro: 'Wij denken graag met u mee om uw verblijf zo comfortabel en smaakvol mogelijk te maken. De onderstaande services zijn optioneel en op aanvraag te boeken.',
-      svc1_h3: 'Schoonmaakservice', svc2_h3: 'Privé-kokkin',
-      hike_eyebrow: 'Natuur & avontuur', hike_h2: 'De Serra de Bèrnia Loop',
-      hike_lp: 'Aanbevolen in <strong>Lonely Planet</strong> — Serra de Bèrnia Loop Walk',
+      svc1_h3: 'Schoonmaakservice', svc2_h3: 'Prive-kokkin',
+      svc1_desc: 'Wij kunnen voor u een professionele schoonmaakster inschakelen die de woning tijdens uw verblijf bijhoudt — zodat u zich geen moment zorgen hoeft te maken en optimaal kunt genieten van uw vakantie.',
+      svc1_b1: 'Tussentijdse schoonmaak (op afspraak)',
+      svc1_b2: 'Verschonen beddengoed & handdoeken',
+      svc1_b3: 'Eindschoonmaak standaard inbegrepen',
+      svc1_note: 'Prijs op aanvraag · Reserveer bij boeking',
+      svc2_desc: 'Wij kunnen een lokale Spaanse kokkin voor u regelen die traditionele gerechten bereidt. Een unieke culinaire ervaring die u meeneemt naar het hart van de Valenciaanse keuken.',
+      svc2_spec: 'Specialiteiten:',
+      svc2_note: 'Prijs op aanvraag · Reserveer bij boeking · Boodschappen niet inbegrepen',
+      svc_cta: 'Heeft u interesse in een van deze services? Vermeld dit in uw boekingsaanvraag of neem contact op via WhatsApp, dan regelen wij alles voor u.',
+      hike_eyebrow: 'Natuur & avontuur', hike_h2: 'De Serra de Bèrnia Rondwandeling',
+      hike_lp: 'Aanbevolen in <strong>Lonely Planet</strong> — Serra de Bèrnia Rondwandeling',
       hike_stat1: 'Afstand', hike_stat2: 'Hoogteverschil', hike_stat3: 'Duur', hike_stat4: 'Moeilijkheidsgraad',
-      hike_btn: 'Meer lezen op Lonely Planet ↗',
+      hike_p1: 'Een van de mooiste wandelingen van de Costa Blanca begint vrijwel bij uw voordeur. De Serra de Bèrnia Loop is door Lonely Planet geprezen vanwege de dramatische kalkstenen bergkammen, het weidsheid panorama richting Moraira en Benissa en het iconische Fort Bèrnia — een 16e-eeuwse Spaanse vesting hoog boven de Middellandse Zee.',
+      hike_p2: 'Het pad slingert door wilde rozemarijn, tijm en eeuwenoude amandelboomgaarden. Onderweg passeert u neolithische rotstekeningen — een stille herinnering aan de allereerste bewoners van dit dal — en een natuurlijke bronwaterplaats om uw biddon bij te vullen. Het hoogtepunt is het befaamde rotskanaal El Forat: een tunnel die dwars door de bergkam loopt en u aan de overkant beloont met een spectaculair uitzicht. Dit is wandelen op zijn allerbest — en Finca Bèrnia zet u precies op de goede plek.',
+      cycle_eyebrow: 'Wielrennen',
+      cycle_h2: 'Wielrennen in de Costa Blanca',
+      cycle_badge: 'Trainingsgebied van professionele wielerploegen',
+      cycle_p: 'De wegen rond de Sierra de Bèrnia en het Jalón-dal staan bekend als trainingsgebied van professionele wielerploegen — teams als INEOS Grenadiers, UAE Team Emirates en Jumbo-Visma kiezen de regio bewust als wintertrainingsbasis. Schone lucht, nauwelijks verkeer en klimmen die uw benen echte tests bezorgen. Voor de recreatieve fietser zijn er routes voor elk niveau, van rustige dalwegen tot uitdagende bergpassen met panoramisch zeezicht.',
       loc_eyebrow: 'Ligging', loc_h2: 'Uitstekend gelegen',
+      loc_p1: 'Finca Bèrnia ligt in de uitlopers van de Sierra de Bèrnia, op een korte rit van het charmante wijndorp Jalón (Xaló) — bekend om zijn weekmarkt, lokale bodegas en traditionele tapasbarretjes. Het uitzicht vanuit de woning strekt zich uit richting Moraira en Benissa, met altijd de zee in het verschiet. Op heldere dagen is zelfs Ibiza zichtbaar.',
+      loc_p2: 'U bent dicht genoeg bij de zee voor een dagje strand, maar hoog genoeg in de bergen voor koele avonden, schone lucht en absolute stilte.',
       cal_eyebrow: 'Plan uw verblijf', cal_h2: 'Beschikbaarheidskalender',
       cal_intro: 'Controleer welke weken vrij zijn en neem contact op om uw data te reserveren. De rode datums zijn al geboekt.',
       cal_avail: 'Beschikbaar', cal_booked: 'Geboekt / niet beschikbaar', cal_option: 'Onder optie', cal_past: 'Verleden datum',
@@ -1426,6 +1472,7 @@
       form_submit: 'Verstuur aanvraag →',
       form_success: 'Bedankt voor uw bericht! Wij nemen binnen 24 uur contact met u op om uw data te bevestigen.',
       footer_tagline: 'Authentieke stenen villa · Sierra de Bèrnia · Costa Blanca, Spanje',
+      cal_prev: 'Vorige', cal_next: 'Volgende',
       foot_contact: 'Contact',
     },
     en: {
@@ -1435,7 +1482,7 @@
       nav_services: 'Services', nav_hiking: 'Hiking', nav_avail: 'Availability',
       nav_pricing: 'Rates', nav_book: 'Book now',
       hero_eyebrow: 'Sierra de Bèrnia · Costa Blanca · Spain',
-      hero_subtitle: 'An authentic stone villa with panoramic views of sea and mountains — your own paradise in the heart of the Bèrnia nature reserve',
+      hero_subtitle: 'An authentic stone villa with panoramic views of sea and mountains — your own paradise in the heart of the Sierra de Bèrnia.',
       hero_cta: 'Check availability',
       facts_bed: 'Bedrooms', facts_bath: 'Bathrooms', facts_guests: 'Max. guests',
       facts_view_lbl: 'Views', facts_view_val: 'Sea & Mountains',
@@ -1448,11 +1495,11 @@
       about_p3: 'The spacious living room and large dining room each have breathtaking views of both the sea and the imposing ridge of the Sierra de Bèrnia. The owners live on the ground floor and are always nearby for local tips or assistance.',
       about_badge: 'Near <strong>Jalón / Xaló</strong>, Alicante — at 600 m altitude, sea always in view',
       hl1_h3: 'Spacious living room', hl1_p: 'Light, comfortable lounge with panoramic views of the sea and the Sierra de Bèrnia — perfect for unwinding after a day of hiking or a trip to the beach.',
-      hl2_h3: 'Large dining room', hl2_p: 'A generous dining room with sea and mountain views — ideal for shared meals with the whole group. Plenty of room for 8 at the table.',
-      hl3_h3: 'Fully independent', hl3_p: 'Own private entrance, private parking at the door, and complete privacy. You are entirely independent of the owners on the ground floor.',
+      hl2_h3: 'Large dining room', hl2_p: 'A generous dining room with sea and mountain views — ideal for shared meals with the whole group. Comfortable seating for 8 at the dining table.',
+      hl3_h3: 'Fully independent', hl3_p: 'Private access gate and private entrance, enclosed parking right at the door and absolute privacy — fully self-contained living while the owners reside on the ground floor and are available for any questions.',
       view_eyebrow: 'At 600 metres altitude',
       view_h2: 'The views — always spectacular',
-      view_p: 'Whether the sky is a clear blue, dramatic clouds gather, or the sun rises behind the Sierra de Bèrnia in a blaze of orange and red — the views from Finca Bèrnia are always worth it. The sea is always there. And on clear days you can see Ibiza.',
+      view_p: 'Whether the sky is a clear blue, dramatic clouds gather, or the sun rises behind the Sierra de Bèrnia in a blaze of orange and red — the views from Finca Bèrnia are always worth it. The sea is always there, and on clear days you can even see Ibiza.',
       view_stat1_lbl: 'Altitude above sea level', view_stat2_lbl: 'Sea & mountain panorama', view_stat3_lbl: 'Visible on clear days',
       gallery_eyebrow: 'Photo gallery', gallery_h2: 'A peek inside',
       amen_eyebrow: "What's included", amen_h2: 'Amenities',
@@ -1473,11 +1520,27 @@
       svc_eyebrow: 'Available on request', svc_h2: 'Additional services',
       svc_intro: 'We are happy to help make your stay as comfortable and enjoyable as possible. The following services are optional and available on request.',
       svc1_h3: 'Cleaning service', svc2_h3: 'Private chef',
+      svc1_desc: 'We can arrange a professional cleaner to maintain the property during your stay — so you never have to worry and can make the most of your holiday.',
+      svc1_b1: 'Interim cleaning (by appointment)',
+      svc1_b2: 'Change of bed linen & towels',
+      svc1_b3: 'Final cleaning always included',
+      svc1_note: 'Price on request · Book when reserving',
+      svc2_desc: 'We can arrange a local Spanish chef who prepares traditional dishes for you. A unique culinary experience that brings you to the heart of Valencian cuisine.',
+      svc2_spec: 'Specialities:',
+      svc2_note: 'Price on request · Book when reserving · Groceries not included',
+      svc_cta: 'Interested in one of these services? Mention it in your booking request or contact us via WhatsApp — we will arrange everything for you.',
       hike_eyebrow: 'Nature & adventure', hike_h2: 'The Serra de Bèrnia Loop',
       hike_lp: 'Recommended in <strong>Lonely Planet</strong> — Serra de Bèrnia Loop Walk',
       hike_stat1: 'Distance', hike_stat2: 'Elevation gain', hike_stat3: 'Duration', hike_stat4: 'Difficulty',
-      hike_btn: 'Read more on Lonely Planet ↗',
+      hike_p1: 'One of the most beautiful hikes on the Costa Blanca starts almost right at your front door. The Serra de Bèrnia Loop has been praised by Lonely Planet for its dramatic limestone ridges, the sweeping panorama towards Moraira and Benissa, and the iconic Fort Bèrnia — a 16th-century Spanish fortress high above the Mediterranean.',
+      hike_p2: 'The trail winds through wild rosemary, thyme and ancient almond groves. Along the way you pass Neolithic cave paintings — a silent reminder of the very first people to inhabit this valley — and a natural spring where you can refill your water bottle. The highlight is the famous rock tunnel El Forat: a passage carved straight through the ridge that rewards you on the other side with a spectacular view. This is hiking at its finest — and Finca Bèrnia puts you right at the starting point.',
+      cycle_eyebrow: 'Cycling',
+      cycle_h2: 'Cycling the Costa Blanca',
+      cycle_badge: 'Training ground for professional cycling teams',
+      cycle_p: 'The roads around the Sierra de Bèrnia and the Jalón valley are renowned as a training ground for professional cycling teams — squads such as INEOS Grenadiers, UAE Team Emirates and Jumbo-Visma deliberately choose the region as their winter training base. Clean air, barely any traffic and climbs that put your legs to a serious test. For the recreational cyclist there are routes for every level, from relaxed valley roads to challenging mountain passes with panoramic sea views.',
       loc_eyebrow: 'Location', loc_h2: 'Excellently located',
+      loc_p1: 'Finca Bèrnia is nestled in the foothills of the Sierra de Bèrnia, a short drive from the charming wine village of Jalón (Xaló) — known for its weekly market, local bodegas and traditional tapas bars. The views from the property stretch towards Moraira and Benissa, with the sea always on the horizon. On clear days, even Ibiza is visible.',
+      loc_p2: 'You are close enough to the sea for a day at the beach, yet high enough in the mountains for cool evenings, fresh air and absolute peace and quiet.',
       cal_eyebrow: 'Plan your stay', cal_h2: 'Availability calendar',
       cal_intro: 'Check which weeks are free and contact us to reserve your dates. Red dates are already booked.',
       cal_avail: 'Available', cal_booked: 'Booked / unavailable', cal_option: 'Under option', cal_past: 'Past date',
@@ -1500,6 +1563,7 @@
       form_submit: 'Send enquiry →',
       form_success: 'Thank you for your message! We will contact you within 24 hours to confirm your dates.',
       footer_tagline: 'Authentic stone villa · Sierra de Bèrnia · Costa Blanca, Spain',
+      cal_prev: 'Previous', cal_next: 'Next',
       foot_contact: 'Contact',
     },
     de: {
@@ -1509,7 +1573,7 @@
       nav_services: 'Dienste', nav_hiking: 'Wandern', nav_avail: 'Verfügbarkeit',
       nav_pricing: 'Preise', nav_book: 'Jetzt buchen',
       hero_eyebrow: 'Sierra de Bèrnia · Costa Blanca · Spanien',
-      hero_subtitle: 'Eine authentische Steinfinca mit Panoramablick auf Meer und Berge — Ihr persönliches Paradies im Herzen des Naturschutzgebiets Bèrnia',
+      hero_subtitle: 'Eine authentische Steinfinca mit Panoramablick auf Meer und Berge — Ihr persönliches Paradies im Herzen der Sierra de Bèrnia.',
       hero_cta: 'Verfügbarkeit prüfen',
       facts_bed: 'Schlafzimmer', facts_bath: 'Badezimmer', facts_guests: 'Max. Gäste',
       facts_view_lbl: 'Aussicht', facts_view_val: 'Meer & Berge',
@@ -1522,11 +1586,11 @@
       about_p3: 'Das geräumige Wohnzimmer und das große Esszimmer bieten beide atemberaubende Aussichten auf das Meer und den imposanten Kamm der Sierra de Bèrnia. Die Eigentümer bewohnen das Erdgeschoss und sind stets in der Nähe für lokale Tipps oder Hilfe.',
       about_badge: 'Bei <strong>Jalón / Xaló</strong>, Alicante — auf 600 m Höhe, Meerblick immer inklusive',
       hl1_h3: 'Geräumiges Wohnzimmer', hl1_p: 'Helles, komfortables Wohnzimmer mit Panoramablick auf Meer und Sierra de Bèrnia — ideal zum Entspannen nach einer Wanderung oder einem Strandtag.',
-      hl2_h3: 'Großes Esszimmer', hl2_p: 'Ein weitläufiges Esszimmer mit Blick auf Meer und Berge — perfekt für gemeinsame Mahlzeiten. Platz für alle 8 Personen am Tisch.',
-      hl3_h3: 'Vollständig eigenständig', hl3_p: 'Eigener Privateingang, Parkplatz vor der Tür und vollständige Privatsphäre. Sie sind gänzlich unabhängig von den Eigentümern im Erdgeschoss.',
+      hl2_h3: 'Großes Esszimmer', hl2_p: 'Ein weitläufiges Esszimmer mit Blick auf Meer und Berge — perfekt für gemeinsame Mahlzeiten. Komfortable Sitzplätze für 8 Personen am Esstisch.',
+      hl3_h3: 'Vollständig eigenständig', hl3_p: 'Eigener Zugang und privater Eingang, abgeschlossener Parkplatz direkt vor der Tür und absolute Privatsphäre — vollständig autarkes Wohnen, während die Eigentümer im Erdgeschoss wohnen und für Fragen zur Verfügung stehen.',
       view_eyebrow: 'Auf 600 Metern Höhe',
       view_h2: 'Die Aussicht — immer spektakulär',
-      view_p: 'Ob der Himmel strahlend blau ist, dramatische Wolken aufziehen oder die Sonne hinter der Sierra de Bèrnia in einem Meer aus Orange und Rot aufgeht — die Aussicht von Finca Bèrnia lohnt sich immer. Das Meer ist stets zu sehen. Und an klaren Tagen sehen Sie Ibiza.',
+      view_p: 'Ob der Himmel strahlend blau ist, dramatische Wolken aufziehen oder die Sonne hinter der Sierra de Bèrnia in einem Meer aus Orange und Rot aufgeht — die Aussicht von Finca Bèrnia lohnt sich immer. Das Meer ist stets zu sehen, und an klaren Tagen sieht man sogar Ibiza.',
       view_stat1_lbl: 'Höhe ü. d. M.', view_stat2_lbl: 'Berg- & Meerblick', view_stat3_lbl: 'An klaren Tagen sichtbar',
       gallery_eyebrow: 'Fotogalerie', gallery_h2: 'Ein Blick ins Innere',
       amen_eyebrow: 'Was ist inbegriffen', amen_h2: 'Ausstattung',
@@ -1547,11 +1611,27 @@
       svc_eyebrow: 'Auf Anfrage verfügbar', svc_h2: 'Zusätzliche Dienste',
       svc_intro: 'Wir helfen Ihnen gerne, Ihren Aufenthalt so angenehm wie möglich zu gestalten. Die folgenden Dienste sind optional und auf Anfrage buchbar.',
       svc1_h3: 'Reinigungsservice', svc2_h3: 'Privat-Köchin',
+      svc1_desc: 'Wir können für Sie eine professionelle Reinigungskraft arrangieren, die die Unterkunft während Ihres Aufenthalts pflegt — damit Sie sich keine Sorgen machen müssen und Ihren Urlaub in vollen Zügen genießen können.',
+      svc1_b1: 'Zwischenreinigung (nach Vereinbarung)',
+      svc1_b2: 'Wechsel von Bettwäsche & Handtüchern',
+      svc1_b3: 'Endreinigung standardmäßig inbegriffen',
+      svc1_note: 'Preis auf Anfrage · Bei Buchung reservieren',
+      svc2_desc: 'Wir können eine lokale spanische Köchin für Sie arrangieren, die traditionelle Gerichte zubereitet. Ein einzigartiges kulinarisches Erlebnis, das Sie in das Herz der valencianischen Küche entführt.',
+      svc2_spec: 'Spezialitäten:',
+      svc2_note: 'Preis auf Anfrage · Bei Buchung reservieren · Zutaten nicht inbegriffen',
+      svc_cta: 'Haben Sie Interesse an einem dieser Services? Erwähnen Sie dies in Ihrer Buchungsanfrage oder kontaktieren Sie uns per WhatsApp — wir regeln alles für Sie.',
       hike_eyebrow: 'Natur & Abenteuer', hike_h2: 'Die Serra de Bèrnia Runde',
       hike_lp: 'Empfohlen im <strong>Lonely Planet</strong> — Serra de Bèrnia Rundweg',
       hike_stat1: 'Entfernung', hike_stat2: 'Höhenunterschied', hike_stat3: 'Dauer', hike_stat4: 'Schwierigkeit',
-      hike_btn: 'Mehr auf Lonely Planet lesen ↗',
+      hike_p1: 'Eine der schönsten Wanderungen der Costa Blanca beginnt fast direkt vor Ihrer Haustür. Die Serra de Bèrnia Runde wurde vom Lonely Planet für ihre dramatischen Kalksteinrücken, das weite Panorama Richtung Moraira und Benissa sowie das ikonische Fort Bèrnia gelobt — eine spanische Festung aus dem 16. Jahrhundert hoch über dem Mittelmeer.',
+      hike_p2: 'Der Pfad schlängelt sich durch wilden Rosmarin, Thymian und jahrhundertealte Mandelplantagen. Unterwegs passieren Sie neolithische Felszeichnungen — eine stille Erinnerung an die allerersten Bewohner dieses Tals — und eine natürliche Quelle, an der Sie Ihre Trinkflasche auffüllen können. Höhepunkt ist der berühmte Felstunnel El Forat: ein Durchgang, der direkt durch den Bergrücken führt und auf der anderen Seite mit einem spektakulären Panorama belohnt. Wandern vom Feinsten — und die Finca Bèrnia bringt Sie genau an den richtigen Startpunkt.',
+      cycle_eyebrow: 'Radfahren',
+      cycle_h2: 'Radfahren an der Costa Blanca',
+      cycle_badge: 'Trainingsgebiet professioneller Radsportteams',
+      cycle_p: 'Die Straßen rund um die Sierra de Bèrnia und das Jalón-Tal sind als Trainingsgebiet professioneller Radsportteams bekannt — Mannschaften wie INEOS Grenadiers, UAE Team Emirates und Jumbo-Visma wählen die Region bewusst als Wintertrainingsbasis. Saubere Luft, kaum Verkehr und Anstiege, die die Beine wirklich fordern. Für Freizeitradler gibt es Routen für jedes Niveau, von entspannten Talstraßen bis zu anspruchsvollen Bergpässen mit Meerblick.',
       loc_eyebrow: 'Lage', loc_h2: 'Ausgezeichnet gelegen',
+      loc_p1: 'Finca Bèrnia liegt in den Ausläufern der Sierra de Bèrnia, eine kurze Fahrt vom charmanten Weindorf Jalón (Xaló) entfernt — bekannt für seinen Wochenmarkt, lokale Bodegas und traditionelle Tapas-Bars. Der Blick von der Unterkunft erstreckt sich Richtung Moraira und Benissa, mit dem Meer immer im Hintergrund. An klaren Tagen ist sogar Ibiza sichtbar.',
+      loc_p2: 'Sie sind nah genug am Meer für einen Strandtag, aber hoch genug in den Bergen für kühle Abende, frische Luft und absolute Stille.',
       cal_eyebrow: 'Aufenthalt planen', cal_h2: 'Verfügbarkeitskalender',
       cal_intro: 'Prüfen Sie, welche Wochen frei sind, und kontaktieren Sie uns zur Reservierung. Rote Daten sind bereits gebucht.',
       cal_avail: 'Verfügbar', cal_booked: 'Gebucht / nicht verfügbar', cal_option: 'Unter Option', cal_past: 'Vergangenes Datum',
@@ -1574,6 +1654,7 @@
       form_submit: 'Anfrage senden →',
       form_success: 'Vielen Dank für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden.',
       footer_tagline: 'Authentische Steinfinca · Sierra de Bèrnia · Costa Blanca, Spanien',
+      cal_prev: 'Zurück', cal_next: 'Weiter',
       foot_contact: 'Kontakt',
     },
     fr: {
@@ -1583,7 +1664,7 @@
       nav_services: 'Services', nav_hiking: 'Randonnée', nav_avail: 'Disponibilité',
       nav_pricing: 'Tarifs', nav_book: 'Réserver',
       hero_eyebrow: 'Sierra de Bèrnia · Costa Blanca · Espagne',
-      hero_subtitle: 'Une villa en pierre authentique avec vue panoramique sur la mer et les montagnes — votre paradis au cœur de la réserve naturelle de Bèrnia',
+      hero_subtitle: 'Une villa en pierre authentique avec vue panoramique sur la mer et les montagnes — votre paradis au cœur de la Sierra de Bèrnia.',
       hero_cta: 'Voir les disponibilités',
       facts_bed: 'Chambres', facts_bath: 'Salles de bain', facts_guests: 'Max. hôtes',
       facts_view_lbl: 'Vue', facts_view_val: 'Mer & Montagnes',
@@ -1596,11 +1677,11 @@
       about_p3: 'Le spacieux salon et la grande salle à manger offrent tous deux une vue imprenable sur la mer et sur la crête imposante de la Sierra de Bèrnia. Les propriétaires habitent au rez-de-chaussée et sont disponibles pour des conseils ou de l\'aide.',
       about_badge: 'Près de <strong>Jalón / Xaló</strong>, Alicante — à 600 m d\'altitude, mer toujours en vue',
       hl1_h3: 'Grand salon', hl1_p: 'Salon lumineux et confortable avec vue panoramique sur la mer et la Sierra de Bèrnia — parfait pour se détendre après une randonnée ou une journée à la plage.',
-      hl2_h3: 'Grande salle à manger', hl2_p: 'Une salle à manger spacieuse avec vue mer et montagnes — idéale pour les repas en groupe. Places assises pour 8 personnes.',
-      hl3_h3: 'Entièrement indépendant', hl3_p: 'Entrée privée, parking devant la porte et intimité totale. Vous êtes entièrement indépendant des propriétaires au rez-de-chaussée.',
+      hl2_h3: 'Grande salle à manger', hl2_p: 'Une salle à manger spacieuse avec vue mer et montagnes — idéale pour les repas en groupe. Larges places assises pour 8 personnes autour de la table.',
+      hl3_h3: 'Entièrement indépendant', hl3_p: 'Accès privé et entrée privée, parking clôturé juste devant la porte et intimité absolue — logement entièrement autonome tandis que les propriétaires résident au rez-de-chaussée et sont disponibles pour toute question.',
       view_eyebrow: 'À 600 mètres d\'altitude',
       view_h2: 'La vue — toujours spectaculaire',
-      view_p: 'Que le ciel soit d\'un bleu limpide, que des nuages dramatiques s\'accumulent ou que le soleil se lève derrière la Sierra de Bèrnia dans une explosion d\'orange et de rouge — la vue depuis Finca Bèrnia vaut toujours le détour. La mer est toujours là. Et par temps clair, vous voyez Ibiza.',
+      view_p: 'Que le ciel soit d\'un bleu limpide, que des nuages dramatiques s\'accumulent ou que le soleil se lève derrière la Sierra de Bèrnia dans une explosion d\'orange et de rouge — la vue depuis Finca Bèrnia vaut toujours le détour. La mer est toujours là, et par temps clair, on aperçoit même Ibiza.',
       view_stat1_lbl: 'Altitude', view_stat2_lbl: 'Panorama mer & montagne', view_stat3_lbl: 'Visible par temps clair',
       gallery_eyebrow: 'Galerie photo', gallery_h2: 'Un aperçu de l\'intérieur',
       amen_eyebrow: 'Ce qui est inclus', amen_h2: 'Équipements',
@@ -1621,11 +1702,27 @@
       svc_eyebrow: 'Disponible sur demande', svc_h2: 'Services supplémentaires',
       svc_intro: 'Nous sommes heureux de vous aider à rendre votre séjour aussi agréable que possible. Les services suivants sont optionnels et disponibles sur demande.',
       svc1_h3: 'Service de ménage', svc2_h3: 'Cuisinière privée',
+      svc1_desc: 'Nous pouvons faire appel à une femme de ménage professionnelle pour entretenir le logement pendant votre séjour — afin que vous n\'ayez aucun souci et profitiez pleinement de vos vacances.',
+      svc1_b1: 'Nettoyage intermédiaire (sur rendez-vous)',
+      svc1_b2: 'Changement de linge de lit & serviettes',
+      svc1_b3: 'Nettoyage final toujours inclus',
+      svc1_note: 'Prix sur demande · À réserver lors de la réservation',
+      svc2_desc: 'Nous pouvons vous proposer une cuisinière espagnole locale qui prépare des plats traditionnels. Une expérience culinaire unique qui vous emmène au cœur de la cuisine valencienne.',
+      svc2_spec: 'Spécialités :',
+      svc2_note: 'Prix sur demande · À réserver lors de la réservation · Courses non comprises',
+      svc_cta: 'Intéressé(e) par l\'un de ces services ? Mentionnez-le dans votre demande de réservation ou contactez-nous par WhatsApp — nous nous occupons de tout.',
       hike_eyebrow: 'Nature & aventure', hike_h2: 'La boucle de Serra de Bèrnia',
       hike_lp: 'Recommandé dans le <strong>Lonely Planet</strong> — Boucle de Serra de Bèrnia',
       hike_stat1: 'Distance', hike_stat2: 'Dénivelé', hike_stat3: 'Durée', hike_stat4: 'Difficulté',
-      hike_btn: 'Lire plus sur Lonely Planet ↗',
+      hike_p1: "L'une des plus belles randonnées de la Costa Blanca commence presque devant votre porte. La boucle de Serra de Bèrnia a été saluée par le Lonely Planet pour ses crêtes calcaires spectaculaires, son panorama étendu vers Moraira et Benissa et le fort Bèrnia emblématique — une forteresse espagnole du XVIe siècle dominant la Méditerranée.",
+      hike_p2: "Le sentier serpente à travers le romarin sauvage, le thym et d'anciens amandiers. En chemin, vous découvrez des peintures rupestres néolithiques — témoignage silencieux des tout premiers habitants de cette vallée — et une source d'eau naturelle pour remplir votre gourde. Le clou de la randonnée est le célèbre tunnel rocheux El Forat : un passage creusé à travers la crête qui vous récompense de l'autre côté d'une vue spectaculaire. C'est la randonnée dans toute sa splendeur — et Finca Bèrnia vous place exactement au bon endroit.",
+      cycle_eyebrow: 'Cyclisme',
+      cycle_h2: 'Cyclisme sur la Costa Blanca',
+      cycle_badge: "Terrain d'entraînement des équipes cyclistes professionnelles",
+      cycle_p: "Les routes autour de la Sierra de Bèrnia et de la vallée de Jalón sont réputées comme terrain d'entraînement des équipes cyclistes professionnelles — des formations comme INEOS Grenadiers, UAE Team Emirates et Jumbo-Visma choisissent délibérément la région comme base d'entraînement hivernale. Air pur, peu de circulation et montées qui mettent les jambes à rude épreuve. Pour le cycliste amateur, des itinéraires existent pour tous les niveaux, des routes de vallée tranquilles aux cols de montagne avec vue panoramique sur la mer.",
       loc_eyebrow: 'Situation', loc_h2: 'Idéalement situé',
+      loc_p1: "Finca Bèrnia est nichée dans les contreforts de la Sierra de Bèrnia, à courte distance du charmant village viticole de Jalón (Xaló) — connu pour son marché hebdomadaire, ses bodegas locales et ses bars à tapas traditionnels. Les vues depuis la propriété s'étendent vers Moraira et Benissa, avec la mer toujours à l'horizon. Par temps clair, on aperçoit même Ibiza.",
+      loc_p2: 'Vous êtes suffisamment proche de la mer pour une journée à la plage, mais assez haut dans les montagnes pour des soirées fraîches, un air pur et un calme absolu.',
       cal_eyebrow: 'Planifiez votre séjour', cal_h2: 'Calendrier de disponibilité',
       cal_intro: 'Vérifiez les semaines libres et contactez-nous pour réserver vos dates. Les dates en rouge sont déjà réservées.',
       cal_avail: 'Disponible', cal_booked: 'Réservé / indisponible', cal_option: 'Sous option', cal_past: 'Date passée',
@@ -1648,6 +1745,7 @@
       form_submit: 'Envoyer la demande →',
       form_success: 'Merci pour votre message ! Nous vous contacterons sous 24 heures.',
       footer_tagline: 'Villa en pierre authentique · Sierra de Bèrnia · Costa Blanca, Espagne',
+      cal_prev: 'Précédent', cal_next: 'Suivant',
       foot_contact: 'Contact',
     },
     es: {
@@ -1657,7 +1755,7 @@
       nav_services: 'Servicios', nav_hiking: 'Senderismo', nav_avail: 'Disponibilidad',
       nav_pricing: 'Tarifas', nav_book: 'Reservar',
       hero_eyebrow: 'Sierra de Bèrnia · Costa Blanca · España',
-      hero_subtitle: 'Una villa de piedra auténtica con vistas panorámicas al mar y las montañas — su propio paraíso en el corazón de la reserva natural de Bèrnia',
+      hero_subtitle: 'Una villa de piedra auténtica con vistas panorámicas al mar y las montañas — su propio paraíso en el corazón de la Sierra de Bèrnia.',
       hero_cta: 'Ver disponibilidad',
       facts_bed: 'Habitaciones', facts_bath: 'Baños', facts_guests: 'Máx. huéspedes',
       facts_view_lbl: 'Vistas', facts_view_val: 'Mar & Montañas',
@@ -1670,11 +1768,11 @@
       about_p3: 'El amplio salón y el gran comedor tienen cada uno vistas impresionantes tanto al mar como a la imponente cresta de la Sierra de Bèrnia. Los propietarios viven en la planta baja y siempre están cerca para consejos locales o ayuda.',
       about_badge: 'Cerca de <strong>Jalón / Xaló</strong>, Alicante — a 600 m de altitud, con el mar siempre a la vista',
       hl1_h3: 'Amplio salón', hl1_p: 'Salón luminoso y confortable con vistas panorámicas al mar y la Sierra de Bèrnia — perfecto para relajarse después de una caminata o un día en la playa.',
-      hl2_h3: 'Gran comedor', hl2_p: 'Un comedor espacioso con vistas al mar y las montañas — ideal para las comidas en grupo. Sitio para 8 personas en la mesa.',
-      hl3_h3: 'Totalmente independiente', hl3_p: 'Entrada privada propia, aparcamiento en la puerta y privacidad total. Es completamente independiente de los propietarios de la planta baja.',
+      hl2_h3: 'Gran comedor', hl2_p: 'Un comedor espacioso con vistas al mar y las montañas — ideal para las comidas en grupo. Cómodas plazas para 8 personas en la mesa de comedor.',
+      hl3_h3: 'Totalmente independiente', hl3_p: 'Acceso privado y entrada privada, aparcamiento cerrado justo en la puerta y privacidad absoluta — alojamiento completamente autónomo mientras los propietarios residen en la planta baja y están disponibles para cualquier consulta.',
       view_eyebrow: 'A 600 metros de altitud',
       view_h2: 'Las vistas — siempre espectaculares',
-      view_p: 'Ya sea que el cielo esté azul intenso, se acumulen nubes dramáticas o salga el sol detrás de la Sierra de Bèrnia en una explosión de naranja y rojo — las vistas desde Finca Bèrnia siempre merecen la pena. El mar siempre está ahí. Y en días despejados se ve Ibiza.',
+      view_p: 'Ya sea que el cielo esté azul intenso, se acumulen nubes dramáticas o salga el sol detrás de la Sierra de Bèrnia en una explosión de naranja y rojo — las vistas desde Finca Bèrnia siempre merecen la pena. El mar siempre está ahí, y en días despejados incluso se ve Ibiza.',
       view_stat1_lbl: 'Altitud s.n.m.', view_stat2_lbl: 'Panorama mar & montaña', view_stat3_lbl: 'Visible en días claros',
       gallery_eyebrow: 'Galería de fotos', gallery_h2: 'Un vistazo al interior',
       amen_eyebrow: 'Qué está incluido', amen_h2: 'Equipamiento',
@@ -1695,11 +1793,27 @@
       svc_eyebrow: 'Disponible bajo solicitud', svc_h2: 'Servicios adicionales',
       svc_intro: 'Estamos encantados de ayudarle a que su estancia sea lo más cómoda posible. Los siguientes servicios son opcionales y están disponibles bajo solicitud.',
       svc1_h3: 'Servicio de limpieza', svc2_h3: 'Cocinera privada',
+      svc1_desc: 'Podemos organizar para usted una limpiadora profesional que mantendrá la vivienda durante su estancia — para que no tenga que preocuparse por nada y disfrute al máximo de sus vacaciones.',
+      svc1_b1: 'Limpieza intermedia (con cita previa)',
+      svc1_b2: 'Cambio de ropa de cama & toallas',
+      svc1_b3: 'Limpieza final siempre incluida',
+      svc1_note: 'Precio a consultar · Reserve al hacer la reserva',
+      svc2_desc: 'Podemos organizar para usted una cocinera española local que prepara platos tradicionales. Una experiencia culinaria única que le lleva al corazón de la cocina valenciana.',
+      svc2_spec: 'Especialidades:',
+      svc2_note: 'Precio a consultar · Reserve al hacer la reserva · Compras no incluidas',
+      svc_cta: 'Le interesa alguno de estos servicios? Indíquelo en su solicitud de reserva o contáctenos por WhatsApp — nos encargamos de todo.',
       hike_eyebrow: 'Naturaleza & aventura', hike_h2: 'El circuito de Serra de Bèrnia',
       hike_lp: 'Recomendado en <strong>Lonely Planet</strong> — Circuito de Serra de Bèrnia',
       hike_stat1: 'Distancia', hike_stat2: 'Desnivel', hike_stat3: 'Duración', hike_stat4: 'Dificultad',
-      hike_btn: 'Leer más en Lonely Planet ↗',
+      hike_p1: 'Una de las mejores rutas de senderismo de la Costa Blanca comienza casi en la puerta de su casa. El circuito de Serra de Bèrnia ha sido elogiado por Lonely Planet por sus dramáticas crestas calcáreas, el amplio panorama hacia Moraira y Benissa y el icónico Fuerte Bèrnia — una fortaleza española del siglo XVI sobre el Mediterráneo.',
+      hike_p2: 'El sendero serpentea entre romero silvestre, tomillo y antiguos almendros. Por el camino encontrará pinturas rupestres neolíticas — silencioso testimonio de los primeros habitantes de este valle — y un manantial de agua natural donde rellenar su botella. El punto culminante es el famoso túnel rocoso El Forat: un paso excavado directamente en la cresta que le recompensa al otro lado con una vista espectacular. Esto es el senderismo en su máxima expresión — y Finca Bèrnia le sitúa justo en el punto de partida.',
+      cycle_eyebrow: 'Ciclismo',
+      cycle_h2: 'Ciclismo en la Costa Blanca',
+      cycle_badge: 'Zona de entrenamiento de equipos ciclistas profesionales',
+      cycle_p: 'Las carreteras alrededor de la Sierra de Bèrnia y el valle de Jalón son reconocidas como zona de entrenamiento de equipos ciclistas profesionales — equipos como INEOS Grenadiers, UAE Team Emirates y Jumbo-Visma eligen deliberadamente la región como base de entrenamiento invernal. Aire limpio, apenas tráfico y ascensos que ponen las piernas a prueba de verdad. Para el ciclista aficionado hay rutas para todos los niveles, desde tranquilas carreteras de valle hasta exigentes puertos de montaña con vistas panorámicas al mar.',
       loc_eyebrow: 'Ubicación', loc_h2: 'Excelente ubicación',
+      loc_p1: 'Finca Bèrnia se encuentra en las estribaciones de la Sierra de Bèrnia, a pocos minutos en coche del pintoresco pueblo vitivinícola de Jalón (Xaló) — conocido por su mercado semanal, bodegas locales y bares de tapas tradicionales. Las vistas desde la propiedad se extienden hacia Moraira y Benissa, con el mar siempre visible. En días despejados, incluso se ve Ibiza.',
+      loc_p2: 'Está suficientemente cerca del mar para pasar un día en la playa, pero lo bastante alto en las montañas para disfrutar de tardes frescas, aire limpio y silencio absoluto.',
       cal_eyebrow: 'Planifique su estancia', cal_h2: 'Calendario de disponibilidad',
       cal_intro: 'Compruebe qué semanas están libres y contáctenos para reservar sus fechas. Las fechas en rojo ya están reservadas.',
       cal_avail: 'Disponible', cal_booked: 'Reservado / no disponible', cal_option: 'Bajo opción', cal_past: 'Fecha pasada',
@@ -1722,6 +1836,7 @@
       form_submit: 'Enviar solicitud →',
       form_success: '¡Gracias por su mensaje! Le contactaremos en 24 horas para confirmar sus fechas.',
       footer_tagline: 'Villa de piedra auténtica · Sierra de Bèrnia · Costa Blanca, España',
+      cal_prev: 'Anterior', cal_next: 'Siguiente',
       foot_contact: 'Contacto',
     }
   };
@@ -1772,6 +1887,13 @@
   }
 
 
+  function calNavigate(dir) {
+    const newOffset = calOffset + dir * MONTHS_TO_SHOW;
+    if (newOffset < 0) return; // niet verder terug dan huidige maand
+    calOffset = newOffset;
+    buildCalendars();
+  }
+
   function buildCalendars() {
     const bookedSet = new Set();
     BOOKED_RANGES.forEach(([start, end]) => {
@@ -1799,8 +1921,17 @@
     const monthNames = monthNamesAll[currentLang] || monthNamesAll.nl;
     const dayNames   = dayNamesAll[currentLang]   || dayNamesAll.nl;
 
+    // Update navigatie label en prev-knop
+    const firstDt  = new Date(today.getFullYear(), today.getMonth() + calOffset, 1);
+    const lastDt   = new Date(today.getFullYear(), today.getMonth() + calOffset + MONTHS_TO_SHOW - 1, 1);
+    const navLabel = document.getElementById('calNavLabel');
+    if (navLabel) navLabel.textContent = monthNames[firstDt.getMonth()] + ' ' + firstDt.getFullYear()
+      + ' – ' + monthNames[lastDt.getMonth()] + ' ' + lastDt.getFullYear();
+    const prevBtn = document.getElementById('calPrev');
+    if (prevBtn) prevBtn.disabled = (calOffset === 0);
+
     for (let m = 0; m < MONTHS_TO_SHOW; m++) {
-      const dt = new Date(today.getFullYear(), today.getMonth() + m, 1);
+      const dt = new Date(today.getFullYear(), today.getMonth() + calOffset + m, 1);
       const yr = dt.getFullYear(), mo = dt.getMonth();
 
       const calEl = document.createElement('div');
