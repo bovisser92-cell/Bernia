@@ -1414,7 +1414,7 @@
       contact_eyebrow: 'Neem contact op', contact_h2: 'Reserveer uw verblijf',
       contact_p: 'Wij verwelkomen u graag bij Finca Bèrnia! Vul het formulier in en wij reageren binnen 24 uur om de beschikbaarheid te bevestigen en uw vragen te beantwoorden.',
       contact_lang: 'Nederlands · Engels · Spaans', wa_btn: 'WhatsApp ons',
-      wa_msg: 'Hallo, ik ben geïnteresseerd in het huren van Finca Bèrnia.',
+      wa_msg: 'Hallo, ik ben geïnteresseerd in het huren van Finca Bèrnia. Info: info@fincabernia.eu',
       form_fname_lbl: 'Voornaam *', form_lname_lbl: 'Achternaam *', form_email_lbl: 'E-mailadres *',
       form_phone_lbl: 'Telefoon / WhatsApp', form_arrival_lbl: 'Aankomstdatum *', form_departure_lbl: 'Vertrekdatum *',
       form_guests_lbl: 'Aantal personen *', form_msg_lbl: 'Bericht',
@@ -1864,35 +1864,44 @@
   document.getElementById('vlbPrev').onclick = () => { vlbIndex = (vlbIndex - 1 + viewSrcs.length) % viewSrcs.length; vlbImg.src = viewSrcs[vlbIndex]; };
   document.getElementById('vlbNext').onclick = () => { vlbIndex = (vlbIndex + 1) % viewSrcs.length; vlbImg.src = viewSrcs[vlbIndex]; };
 
-  // ─── Contactformulier → mailto ──────────────────────
+  // ─── Contactformulier → Formspree ──────────────────
+  // *** Stap 1: Maak gratis account op formspree.io    ***
+  // *** Stap 2: Maak een nieuw formulier aan            ***
+  // *** Stap 3: Vervang XXXXXXXX door uw formulier-ID  ***
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/XXXXXXXX';
+
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const fname    = document.getElementById('fname').value;
-    const lname    = document.getElementById('lname').value;
-    const email    = document.getElementById('email').value;
-    const phone    = document.getElementById('phone').value;
-    const arrival  = document.getElementById('arrival').value;
-    const departure= document.getElementById('departure').value;
-    const guests   = document.getElementById('guests').value;
-    const message  = document.getElementById('message').value;
+    const form    = this;
+    const btn     = form.querySelector('.btn-submit');
+    const success = document.getElementById('formSuccess');
+    const t       = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[currentLang]) ? TRANSLATIONS[currentLang] : {};
 
-    const body = encodeURIComponent(
-      `Naam: ${fname} ${lname}\n` +
-      `E-mail: ${email}\n` +
-      `Telefoon: ${phone}\n` +
-      `Aankomst: ${arrival}\n` +
-      `Vertrek: ${departure}\n` +
-      `Personen: ${guests}\n\n` +
-      `Bericht:\n${message}`
-    );
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
 
-    // *** VERVANG door uw eigen e-mailadres ***
-    window.location.href =
-      `mailto:info@casabernia.com?subject=Verhuurvraag%20Casa%20B%C3%A8rnia&body=${body}`;
-
-    document.getElementById('formSuccess').style.display = 'block';
-    this.reset();
-    setTimeout(() => document.getElementById('formSuccess').style.display = 'none', 6000);
+    fetch(FORMSPREE_ENDPOINT, {
+      method:  'POST',
+      body:    new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        success.style.display = 'block';
+        form.reset();
+        setTimeout(() => { success.style.display = 'none'; }, 7000);
+      } else {
+        response.json().then(data => {
+          const msg = (data.errors && data.errors[0]) ? data.errors[0].message : 'Er is een fout opgetreden.';
+          alert(msg);
+        }).catch(() => alert('Er is een fout opgetreden. Probeer het opnieuw.'));
+      }
+    })
+    .catch(() => alert('Geen verbinding mogelijk. Controleer uw internetverbinding.'))
+    .finally(() => {
+      btn.disabled = false;
+      btn.style.opacity = '';
+    });
   });
 
 
